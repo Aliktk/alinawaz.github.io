@@ -3,7 +3,6 @@ A community-maintained open-source project aimed at making personal portfolios f
 
 ## A sneak peek into what we have here🙈
 
-# A sneak peek into what we have here🙈 :
 
 ### Home Page:
 
