@@ -5,25 +5,25 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
-    title: "Deep Learning Engineer",
-    cardImage: "assets/images/experience-page/dlision.jfif", 
-    place: "DLision",
-    time: "(July, 2020 - present)",
-    desp: "<li>Actively involved in the entire pipeline of vision application from data cleaning and preparation through to model training on GCP and Determined and deployment over Nvidia’s Triton inference server.</li> <li> Working on various tools such as OpenCV, Caffe, Pytorch and Keras and doing Data Analysis and Optimization using Pandas, Numba, Scipy and Numpy.</li>",
+    title: "Team Lead & Artificial Intelligence Engineer ",
+    cardImage: "assets/images/experience-page/horizon.png",
+    place: "Horizon Tech Services, Islamabad",
+    time: "(July, 2022 - Present)",
+    desp: "<li>Proficient in utilizing Python for developing efficient and robust code.</li><li>Exhibits expertise in data manipulation, statistical analysis, and deploying machine and deep learning algorithms.</li><li>Holds a strong grasp of Django, enabling the development of APIs and sophisticated web applications.</li><li>Experienced in constructing deep learning models utilizing TensorFlow and PyTorch.</li><li>Demonstrates proficiency in managing database systems such as SQLite3 and PostgreSQL, ensuring secure, scalable, and efficient data management.</li><li>Committed to leveraging these technologies to architect innovative and efficient solutions for complex AI engineering projects.</li>"
   },
   {
-    title: "Web Developer",
-    cardImage: "assets/images/experience-page/HP_Logo.png",
-    place: "HpSoft",
-    time: "(Jan - Aug, 2018)",
-    desp: "<li>Worked with Java Servlets.</li><li>Front-End Development (HTML5, CSS3, SAAS and ReactJs).</li><li>Database Connectivity using SQL Server</li>",
+    title: "Artificial Intelligence Engineer",
+    cardImage: "assets/images/experience-page/xylexa.png",
+    place: "Xylexa.ai, Islamabad",
+    time: "(Dec 2020 - June, 2022)",
+    desp: "<li>Developed advanced models for Real-time Breast Cancer Detection and Disease Detection & Localization from Chest X-rays.</li><li>Engaged in Data Annotation and Patient Meta Data Analysis for accurate Disease Classification.</li><li>Proposed innovative solutions in disease detection and localization from Chest X-rays and Breast Cancer Detection.</li><li>Continually broadened my expertise by mastering tools like OpenCV, TensorFlow, Pytorch, and Keras.</li><li>Executed advanced data wrangling, analysis, and optimization using high-performance libraries like Pandas, Numba, Scipy, and Numpy.</li>",
   },
   {
-    title: "Software Engineer Intern",
-    cardImage: "assets/images/experience-page/PTCL-logo.jpg",
-    place: "PTCL, Hafizabad",
-    time: "(May, 16 - Sep, 16)",
-    desp: "<li>Worked on the ROuter Configuration and Cisco Packet Tracer.</li><li>Designed a software that would help employers to make attendence from the database based on his/her fingerprint and he should be provided with various facilities and options to office related work.</li>",
+    title: "Research Assistant (TA)",
+    cardImage: "assets/images/experience-page/uet.jfif",
+    place: "UET Taxila",
+    time: "(March, 2019 - July 2020)",
+    desp: "<li>Application of advanced AI and machine learning techniques for medical imaging analysis</li> <li> Working on various tools such as OpenCV, Caffe, Pytorch and Keras and doing Data Analysis and Optimization using Pandas, Numba, Scipy and Numpy.</li> <li>•	Utilization of state-of-the-art deep learning algorithms for the classification and diagnosis of medical conditions using MRI data</li><li>•	Hands-on experience in implementing cutting-edge AI techniques for medical image analysis in 2D and 3D imaging modalities.</li>",
   },
 ];
 
