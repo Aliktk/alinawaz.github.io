@@ -1,5 +1,4 @@
-User-agent: Googlebot
-User-agent: AdsBot-Google
-Disallow: /
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://portfolio.alinawaz.codes/sitemap.xml

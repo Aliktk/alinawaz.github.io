@@ -1,0 +1,298 @@
+/* Enhanced Animations for Portfolio */
+
+/* Glowing effect for project cards */
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(187, 134, 252, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pulse animation for icons */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.card img:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Gradient text effect for headings */
+.gradient-text {
+    background: linear-gradient(90deg, #bb86fc, #3700b3, #bb86fc);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-flow 3s linear infinite;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Floating animation for profile image */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.rounded-circle {
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(187, 134, 252, 0.4);
+    border: 4px solid #bb86fc;
+}
+
+/* Typing effect enhancement */
+.animated-text {
+    font-weight: 600;
+    color: #bb86fc;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+}
+
+/* Card hover glow effect */
+.volunteerCard:hover, 
+.projectCard:hover {
+    box-shadow: 0 0 30px rgba(187, 134, 252, 0.6);
+    transform: translateY(-8px) scale(1.03);
+    transition: all 0.3s ease;
+}
+
+/* Experience card enhancement */
+.card1:hover {
+    background: linear-gradient(135deg, rgba(187, 134, 252, 0.1), rgba(55, 0, 179, 0.1));
+    border-left: 4px solid #bb86fc;
+}
+
+/* Social icons pulse on hover */
+.socialicon:hover {
+    animation: pulse 1s ease-in-out;
+    filter: brightness(1.3);
+}
+
+/* Smooth scroll indicator */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+#btnScrollToTop {
+    animation: bounce 2s infinite;
+    background: linear-gradient(135deg, #bb86fc, #3700b3) !important;
+    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4);
+}
+
+/* Enhanced preloader */
+.atom {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Timeline item slide-in effect */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(50px);
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add delays for staggered animation */
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+/* Tag/Badge animation */
+.tag {
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3);
+}
+
+/* Navbar enhancement */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(42, 42, 42, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(187, 134, 252, 0.2);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #bb86fc, #3700b3);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Project card emoji enhancement */
+.card .featured-image {
+    transition: transform 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.card:hover .featured-image {
+    transform: scale(1.1) rotate(2deg);
+    filter: grayscale(0%);
+}
+
+/* Footer quote animation */
+.quotes {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button click effect */
+.btn, button {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before, button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before, button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Skill badge pulse */
+@keyframes skill-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(187, 134, 252, 0);
+    }
+}
+
+.skill-badge {
+    animation: skill-pulse 2s infinite;
+}
+
+/* Enhanced loading state */
+.loader-container {
+    background: linear-gradient(135deg, #2b2a2a, #1a1a1a);
+}
+
+/* Research paper card hover */
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(187, 134, 252, 0.3);
+    border-color: #bb86fc;
+}
+
+/* Education timeline enhancement */
+.timeline-content {
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: linear-gradient(135deg, rgba(187, 134, 252, 0.05), rgba(55, 0, 179, 0.05));
+}
+
+/* Particle effect enhancement */
+#particles-js {
+    filter: brightness(1.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .rounded-circle {
+        animation: none;
+    }
+}
+
+/* Print-friendly styles */
+@media print {
+    .loader-container,
+    #btnScrollToTop,
+    .navbar,
+    footer {
+        display: none !important;
+    }
+}
+

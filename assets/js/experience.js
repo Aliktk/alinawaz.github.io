@@ -5,25 +5,46 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
-    title: "Team Lead & Artificial Intelligence Engineer ",
+    title: "Senior AI/ML Engineer 🚀",
+    cardImage: "assets/images/experience-page/invozone.png",
+    place: "Invozone | Johar Town Lahore (Remote)",
+    time: "(April 2025 - Present)",
+    desp: "<li><strong>L34H Platform:</strong> Architected enterprise AI automation using Azure OpenAI + FastAPI + PostgreSQL with intelligent IT issue resolution & rollback capabilities</li><li><strong>Mynatek Flagship:</strong> Led hospital cleaning verification system combining ST-GCN pose estimation + YOLOv11 segmentation for real-time hygiene monitoring on edge devices</li><li><strong>AutoScanX ANPR:</strong> Built high-performance license plate recognition system for multi-lane traffic using PaddleOCR + OpenCV at 60+ FPS</li><li>Implemented LangGraph-based conversational AI interfaces with WebSocket real-time communication</li><li>Developed comprehensive training pipelines with data augmentation, annotation tools & visualization modules</li>"
+  },
+  {
+    title: "Senior Computer Vision Engineer 🎯",
+    cardImage: "assets/images/experience-page/doaz.png",
+    place: "doAZ | Gangnam-gu, Seoul, South Korea (Remote)",
+    time: "(Oct 2024 - March 2025)",
+    desp: "<li><strong>Sobang 3.0 Government System:</strong> Delivered production-ready blueprint analyzer for South Korean building approvals using SAM2 + YOLOv8 - processing 1000+ drawings daily</li><li><strong>PointChecker RAG System:</strong> Built enterprise document intelligence platform with Llamaparse, GPT-4, Gemini Flash 2.0, Marker, Docling & Cohere Rerank 3.5</li><li>Developed custom Template Matching annotator for blueprint floor dataset creation using Roboflow</li><li>Implemented automatic segmentation, area calculation & floor detection with legal-grade accuracy</li><li>Researched GAN-based background removal + Real-ESRGAN image restoration for blueprint clarity enhancement</li>"
+  },
+  {
+    title: "Lead AI Engineer 💡",
     cardImage: "assets/images/experience-page/horizon.png",
-    place: "Horizon Tech Services, Islamabad",
-    time: "(July, 2022 - Present)",
-    desp: "<li>Proficient in utilizing Python for developing efficient and robust code.</li><li>Exhibits expertise in data manipulation, statistical analysis, and deploying machine and deep learning algorithms.</li><li>Holds a strong grasp of Django, enabling the development of APIs and sophisticated web applications.</li><li>Experienced in constructing deep learning models utilizing TensorFlow and PyTorch.</li><li>Demonstrates proficiency in managing database systems such as SQLite3 and PostgreSQL, ensuring secure, scalable, and efficient data management.</li><li>Committed to leveraging these technologies to architect innovative and efficient solutions for complex AI engineering projects.</li>"
+    place: "Horizon Tech Services | NSTP, NUST Islamabad",
+    time: "(Dec 2023 - Sep 2024)",
+    desp: "<li><strong>Media Intelligence Platform:</strong> Led comprehensive AI system monitoring 64+ TV channels + 50+ newspapers + social media with Elasticsearch integration</li><li><strong>Live Streaming Infrastructure:</strong> Built low-latency streaming system (UDP/TCP/HLS) with 30-day video backup & Clip Factory for real-time OCR-based clipping</li><li><strong>ML Pipeline Development:</strong> Deployed multilingual transcription, translation, OCR, text classification & sentiment analysis using Hugging Face + OpenAI</li><li>Directed Agile/Scrum teams in Jira delivering tailored AI solutions to Fortune 500 clients</li><li>Containerized applications with Docker for seamless multi-platform deployment on HPC clusters</li>"
   },
   {
-    title: "Artificial Intelligence Engineer",
+    title: "AI Engineer 🔬",
+    cardImage: "assets/images/experience-page/horizon.png",
+    place: "Horizon Tech Services | NSTP, NUST Islamabad",
+    time: "(July 2022 - Dec 2023)",
+    desp: "<li>Conducted cutting-edge R&D in Deep Learning & NLP for sentiment analysis, text translation & news classification</li><li>Enhanced smart surveillance systems using YOLOv8/YOLOv10 with real-time object detection & tracking</li><li>Built bird species recognition system using Faster R-CNN + ResNet50 + VGG19, classifying 55 species from Xeno-Canto dataset</li><li>Developed RRDB models for image super-resolution & upscaling of low-resolution surveillance footage</li><li>Implemented Defense-GAN for adversarial attack prevention, enhancing AI model robustness</li><li>Created copy-move forgery detection using SIFT, SURF, IHC & AKAZE for digital forensics</li>"
+  },
+  {
+    title: "AI Engineer - Medical Imaging 🏥",
     cardImage: "assets/images/experience-page/xylexa.png",
-    place: "Xylexa.ai, Islamabad",
-    time: "(Dec 2020 - June, 2022)",
-    desp: "<li>Developed advanced models for Real-time Breast Cancer Detection and Disease Detection & Localization from Chest X-rays.</li><li>Engaged in Data Annotation and Patient Meta Data Analysis for accurate Disease Classification.</li><li>Proposed innovative solutions in disease detection and localization from Chest X-rays and Breast Cancer Detection.</li><li>Continually broadened my expertise by mastering tools like OpenCV, TensorFlow, Pytorch, and Keras.</li><li>Executed advanced data wrangling, analysis, and optimization using high-performance libraries like Pandas, Numba, Scipy, and Numpy.</li>",
+    place: "Xylexa | NSTP, NUST Islamabad",
+    time: "(Dec 2020 - June 2022)",
+    desp: "<li><strong>Breast Cancer CAD:</strong> Developed mammography analysis system using VinDr-Mammo dataset achieving 95%+ lesion detection sensitivity</li><li><strong>Chest X-ray AI:</strong> Created multi-disease classification & lung segmentation models for pneumonia detection using MIMIC-CXR & VinDr-PCXR</li><li>Collaborated with radiographers on medical image annotation & clinical validation - improving diagnostic precision by 30%</li><li>Enhanced DICOM/Nifti medical imaging pipelines with quality optimization & metadata standardization</li><li>Implemented incremental learning for continuous model improvement with new clinical data</li><li>Completed CITI Program certification for Human Research & medical imaging ethics</li>"
   },
   {
-    title: "Research Assistant (TA)",
+    title: "Research Assistant (Teaching Assistant) 📚",
     cardImage: "assets/images/experience-page/uet.jfif",
-    place: "UET Taxila",
-    time: "(March, 2019 - July 2020)",
-    desp: "<li>Application of advanced AI and machine learning techniques for medical imaging analysis</li> <li> Working on various tools such as OpenCV, Caffe, Pytorch and Keras and doing Data Analysis and Optimization using Pandas, Numba, Scipy and Numpy.</li> <li>•	Utilization of state-of-the-art deep learning algorithms for the classification and diagnosis of medical conditions using MRI data</li><li>•	Hands-on experience in implementing cutting-edge AI techniques for medical image analysis in 2D and 3D imaging modalities.</li>",
+    place: "University of Engineering and Technology | Taxila",
+    time: "(March 2019 - July 2020)",
+    desp: "<li>Pioneered AI research at SIMPLE Lab focusing on brain MRI analysis for neurodegenerative diseases</li><li>Developed deep learning frameworks for Alzheimer's Disease early detection using 2D & 3D MRI imaging</li><li>Published research in IEEE INMIC 2020 on CNN-based Alzheimer's classification</li><li>Specialized in medical image preprocessing, feature extraction & spatial-temporal analysis techniques</li><li>Explored innovative neuroimaging technologies & their integration with state-of-the-art AI architectures</li><li>Mentored undergraduate students in machine learning & computer vision coursework</li>"
   },
 ];
 

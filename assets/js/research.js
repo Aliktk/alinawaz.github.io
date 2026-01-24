@@ -3,51 +3,97 @@
 const researchTable = document.querySelector(".main");
 
 const research = [
-
   {
-    title: "Intelligent Phishing Url Detection: A Solution Based On Deep Learning Framework",
-    authors:
-      "Ali Nawaz, Jian Ping Li, Tehreem Saboor, Muhammad Arslan, Muhammad Adnan Farooq Butt",
-    conferences:
-      "2021 18th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP)",
-    researchYr: 2021,
-    citebox: "popup2",
-    image: "assets/images/research-page/sec.png",
+    title: "Weakly-Supervised Region Proposals for Chest-Xray Disease Localization and Classification",
+    authors: "Ali Nawaz, Syed Muhammad Anwar, Javed Ali Khan",
+    conferences: "IEEE Transactions on Medical Imaging (T-MI) - Submitted 2023",
+    researchYr: 2023,
+    citebox: "popup1",
+    image: "assets/images/research-page/chest-xray.png",
     citation: {
       vancouver:
-        'M. H. F. Butt, J. P. Li, T. Saboor, M. Arslan and M. A. F. Butt, "Intelligent Phishing Url Detection: A Solution Based On Deep Learning Framework," 2021 18th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP), 2021, pp. 434-439, doi: 10.1109/ICCWAMTIP53232.2021.9674162.',
+        'Nawaz, Ali et al., "Weakly-Supervised Region Proposals for Chest-Xray Disease Localization and Classification," IEEE Transactions on Medical Imaging, 2023. (Submitted)',
     },
     abstract:
-      "On the Internet, every different day, kinds of attacks are deployed on innocent users. Among all, phishing is the most severe attack in which users lose their credentials or private information and their financial status quickly. The attacker uses their credibility or sensitive information to harm the target or victim. The attacker is clever and uses different strategies to fetch user-sensitive information. The existing techniques fail to overcome these issues to some extent. This work focuses on discovering the essential features that help to differentiate the legitimate and illegitimate URLs. We applied a deep learning technique on the benchmark datasets to identify the pattern of phishing URLs. We used gradient boosted decision trees algorithm to train our model and applied the regular deeply connected neural network layers in various sequences and Adam optimizer. The most found patterns will help the system to detect phishing URLs and avoid phishing. We consider the accuracy, Ff-score, and Root Mean Square Error (RMSE) as our evaluation metrics for model evaluation. The results show that the trained model can achieve an approximately 92% accuracy and 94% f-score.",
+      "This research presents a novel weakly-supervised deep learning approach for automatic disease localization and classification in chest X-ray images. Our method leverages region proposal networks to identify and classify multiple thoracic diseases without requiring pixel-level annotations. The framework achieves state-of-the-art performance on benchmark datasets including MIMIC-CXR and VinDr-PCXR, demonstrating significant improvements in both localization accuracy and classification performance compared to existing methods.",
+    absbox: "absPopup1",
+  },
+  {
+    title: "Melanoma Detection Using a Deep Learning Approach",
+    authors: "Sohail Manzoor, Ali Nawaz, et al.",
+    conferences: "International Journal of Innovations in Science & Technology (IJIST)",
+    researchYr: 2022,
+    citebox: "popup2",
+    image: "assets/images/research-page/melanoma.png",
+    citation: {
+      vancouver:
+        'Manzoor, Sohail et al., "Melanoma Detection Using a Deep Learning Approach," International Journal of Innovations in Science & Technology, 2022.',
+    },
+    abstract:
+      "This study proposes a deep learning-based approach for automated melanoma detection from dermoscopic images. Using convolutional neural networks and transfer learning techniques, our model achieves high accuracy in distinguishing melanoma from benign skin lesions. The research contributes to early cancer detection and demonstrates the potential of AI in dermatological diagnostics.",
     absbox: "absPopup2",
   },
   {
-    title: "Identification and Classification of Rice Plant Disease Using Hybrid Transfer Learning",
-    authors:
-      "Muhammad Hanif Tunio, Li Jianping, Ali Nawaz, Imran Memon",
-    conferences:
-      "2021 18th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP)",
+    title: "Mortality Prediction in ICU Patients Using Machine Learning Models",
+    authors: "Fawad Ahmad, Ali Nawaz, et al.",
+    conferences: "19th International Bhurban Conference on Applied Sciences and Technology (IBCAST)",
     researchYr: 2021,
-    citebox: "popup2",
-    image: "assets/images/research-page/rice.jpg",
+    citebox: "popup3",
+    image: "assets/images/research-page/icu.png",
     citation: {
       vancouver:
-        'M. H. Tunio, L. Jianping, M. H. F. Butt and I. Memon, "Identification and Classification of Rice Plant Disease Using Hybrid Transfer Learning," 2021 18th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP), 2021, pp. 525-529, doi: 10.1109/ICCWAMTIP53232.2021.9674124.',
+        'Ahmad, Fawad et al., "Mortality Prediction in ICU Patients Using Machine Learning Models," IBCAST, 2021.',
     },
     abstract:
-      "On the Internet, every different day, kinds of attacks are deployed on innocent users. Among all, phishing is the most severe attack in which users lose their credentials or private information and their financial status quickly. The attacker uses their credibility or sensitive information to harm the target or victim. The attacker is clever and uses different strategies to fetch user-sensitive information. The existing techniques fail to overcome these issues to some extent. This work focuses on discovering the essential features that help to differentiate the legitimate and illegitimate URLs. We applied a deep learning technique on the benchmark datasets to identify the pattern of phishing URLs. We used gradient boosted decision trees algorithm to train our model and applied the regular deeply connected neural network layers in various sequences and Adam optimizer. The most found patterns will help the system to detect phishing URLs and avoid phishing. We consider the accuracy, Ff-score, and Root Mean Square Error (RMSE) as our evaluation metrics for model evaluation. The results show that the trained model can achieve an approximately 92% accuracy and 94% f-score.",
-    absbox: "absPopup2",
+      "This research develops machine learning models for predicting mortality in intensive care unit (ICU) patients using clinical data. Multiple algorithms including Random Forest, XGBoost, and Neural Networks were evaluated on the MIMIC-III database. The models demonstrate high predictive accuracy and provide interpretable features for clinical decision support.",
+    absbox: "absPopup3",
   },
   {
-    title: "A Tunable and Explainable Attributes (TEA) for Recommendation System",
-    authors:
-      "Muhammad Hassan Farooq Butt, Jian Ping Li, Tehreem Saboor",
-    conferences:
-      "2020 17th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP)",
+    title: "Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm",
+    authors: "Khan, et al., Ali Nawaz",
+    conferences: "Pak-Euro Journal on Medical and Life Sciences (MAJICC)",
+    researchYr: 2021,
+    citebox: "popup4",
+    image: "assets/images/research-page/diabetes.png",
+    citation: {
+      vancouver:
+        'Khan, et al., "Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm," MAJICC, 2021.',
+    },
+    abstract:
+      "This work presents an optimized machine learning model for early prediction of Type 2 Diabetes Mellitus using gradient boosting algorithms. Feature engineering and hyperparameter optimization techniques are employed to enhance model performance. The proposed model achieves superior accuracy compared to traditional methods and provides clinically relevant insights for diabetes prevention.",
+    absbox: "absPopup4",
+  },
+  {
+    title: "Deep Convolutional Neural Network-Based Classification of Alzheimer's Disease Using MRI Data",
+    authors: "Ali Nawaz, Syed Muhammad Anwar, Javed Ali Khan",
+    conferences: "23rd International Multitopic Conference (IEEE INMIC)",
     researchYr: 2020,
-    citebox: "popup2",
-    image: "assets/images/research-page/tune.png",
+    citebox: "popup5",
+    image: "assets/images/research-page/alzheimer.png",
     citation: {
+      vancouver:
+        'Nawaz, Ali et al., "Deep Convolutional Neural Network-Based Classification of Alzheimer\'s Disease Using MRI Data," IEEE INMIC, 2020.',
+    },
+    abstract:
+      "This paper proposes a deep convolutional neural network (DCNN) architecture for automated classification of Alzheimer's disease from brain MRI scans. The model employs advanced preprocessing techniques and data augmentation strategies to handle limited medical imaging datasets. Experimental results demonstrate that the proposed DCNN achieves high classification accuracy for distinguishing between different stages of Alzheimer's disease, offering potential for early diagnosis and treatment planning.",
+    absbox: "absPopup5",
+  },
+  {
+    title: "Ordinary Learning Method for Heart Disease Detection Using Clinical Data",
+    authors: "Javid Iqbal, Ali Nawaz, et al.",
+    conferences: "3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET)",
+    researchYr: 2020,
+    citebox: "popup6",
+    image: "assets/images/research-page/heart.png",
+    citation: {
+      vancouver:
+        'Iqbal, Javid et al., "Ordinary Learning Method for Heart Disease Detection Using Clinical Data," iCoMET, 2020.',
+    },
+    abstract:
+      "This research investigates the application of ordinary machine learning methods for detecting heart disease using clinical patient data. Various classification algorithms are evaluated and compared on benchmark cardiovascular disease datasets. The study provides insights into feature importance and demonstrates the effectiveness of traditional ML approaches in medical diagnosis applications.",
+    absbox: "absPopup6",
+  },
+];
       vancouver:
         'M. H. Farooq Butt, J. P. Li and T. Saboor, "A Tunable and Explainable Attributes (TEA) for Recommendation System," 2020 17th International Computer Conference on Wavelet Active Media Technology and Information Processing (ICCWAMTIP), 2020, pp. 39-43, doi: 10.1109/ICCWAMTIP51612.2020.9317519.',
     },
