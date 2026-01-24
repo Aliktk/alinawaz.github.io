@@ -5,66 +5,95 @@ AOS.init();
 const moocs = document.querySelector(".moocs");
 const moocscards = [
   {
-    title: "Data Science",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/browse/data-science",
+    title: "Machine and Deep Learning",
+    cardImage: "assets/images/education-page/dice-analytics.png",
+    moocLink: "#",
+    issuer: "DICE Analytics",
+    date: "Dec 2019"
   },
   {
-    title: "AI For Everyone",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/ai-for-everyone",
-  },
-  {
-    title: "Machine Learning",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/machine-learning",
+    title: "Deep Learning using Pytorch",
+    cardImage: "assets/images/education-page/udacity.svg",
+    moocLink: "#",
+    issuer: "Udacity",
+    date: "April 2020"
   },
   {
     title: "Deep Learning Specialization",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/xml-from-beginner-to-expert/",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "#",
+    issuer: "Coursera",
+    date: "May 2020"
   },
   {
-    title: "Data Structures & Algorithms",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink:
-      "https://www.udacity.com/course/data-structures-and-algorithms-nanodegree--nd256",
+    title: "Artificial Intelligence [ML/DL]",
+    cardImage: "assets/images/education-page/navttc.png",
+    moocLink: "#",
+    issuer: "NAVTTC",
+    date: "March 2020"
+  },
+  {
+    title: "National Freelancing Training",
+    cardImage: "assets/images/education-page/mitt.png",
+    moocLink: "#",
+    issuer: "MITT",
+    date: "July 2020"
+  },
+  {
+    title: "Professional Python Programming",
+    cardImage: "assets/images/education-page/pseb.png",
+    moocLink: "#",
+    issuer: "PSEB",
+    date: "Aug 2020"
+  },
+  {
+    title: "SCRUM Product Owner",
+    cardImage: "assets/images/education-page/pseb.png",
+    moocLink: "#",
+    issuer: "PSEB",
+    date: "Aug 2020"
+  },
+  {
+    title: "E-Rozgaar on Creative Design",
+    cardImage: "assets/images/education-page/pitb.png",
+    moocLink: "#",
+    issuer: "PITB",
+    date: "Sep 2020"
   },
   {
     title: "AI for Medical Diagnosis",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink:
-      "https://www.coursera.org/lecture/react-native/introduction-to-react-native-Eax0D",
+    moocLink: "https://www.coursera.org/learn/ai-for-medical-diagnosis",
+    issuer: "Coursera",
+    date: "May 2020"
   },
   {
-    title: "Overview of Data Visualization",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/programs/university-of-engineering-and-technology-taxila-on-coursera-8foz0/specializations/deep-learning",
+    title: "Python for Data Science Chilla",
+    cardImage: "assets/images/education-page/codanics.png",
+    moocLink: "#",
+    issuer: "Codanics",
+    date: "Feb 2022"
   },
   {
-    title: "Introduction to HTML 5",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-html-and-css--ud001",
+    title: "ChatGPT Prompt Engineering",
+    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    moocLink: "#",
+    issuer: "deeplearning.ai",
+    date: "2023"
   },
   {
-    title: "Introduction to CSS 3",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-html-and-css--ud001",
+    title: "Pair Programming with LLM",
+    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    moocLink: "#",
+    issuer: "deeplearning.ai",
+    date: "2023"
   },
   {
-    title: "Javascript",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/intro-to-javascript--ud803",
-  },
-  {
-    title: "Bootstrap 4",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/bootstrap-4-tutorials/",
-  },
-  {
-    title: "Deep Learning with PyTorch : Object Localization",
-    cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/deep-learning-with-pytorch--object-localization/home/week/1",
+    title: "Finetuning Large Language Models",
+    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    moocLink: "#",
+    issuer: "deeplearning.ai",
+    date: "2023"
   },
 ];
 
@@ -111,7 +140,7 @@ function showExperience() {
 const showCards = () => {
   let output = "";
   moocscards.forEach(
-    ({ title, cardImage, moocLink }) =>
+    ({ title, cardImage, moocLink, issuer, date }) =>
       (output += `        
         <div class="col-6 col-md-3 col-sm-4 column" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="600" >  
             <div class="card mb-3 mx-auto">
@@ -119,11 +148,13 @@ const showCards = () => {
                   <div class="content-overlay"></div>
                     <img src=${cardImage} class="card-img-top content-image">     
                   <div class="content-details fadeIn-bottom">
-                    <a href="${moocLink}" target="_blank"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>                                   
+                    ${moocLink !== '#' ? `<a href="${moocLink}" target="_blank"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>` : ''}                                   
                   </div>
                 </div>
                 <div class="card-body">
                     <h6 class="mt-0 py-2 text-center font-weight-bold mooc-title" style="font-size:12px;">${title}</h6>
+                    <p class="text-center text-muted" style="font-size:10px;margin:0">${issuer}</p>
+                    <p class="text-center text-muted" style="font-size:10px">${date}</p>
                 </div>
             </div>
         </div>        

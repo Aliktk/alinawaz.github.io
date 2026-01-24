@@ -284,6 +284,98 @@
     .rounded-circle {
         animation: none;
     }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .socialicon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Social Icons Layout and Styling */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.socialicon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socialicon:hover {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.8;
+}
+
+.socialicon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.socialicon i {
+    transition: transform 0.3s ease;
+}
+
+.socialicon:hover i {
+    transform: scale(1.15);
+}
+
+/* Research Paper Links Styling */
+.button-abstract {
+    margin-right: 5px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #bb86fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-abstract:hover {
+    background-color: #9965d4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(187, 134, 252, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.paperTitle {
+    color: #bb86fc;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.paperTitle:hover {
+    color: #9965d4;
+    text-decoration: underline;
+}
+
+/* Awards and Leadership Card Enhancements */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-sm:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    transform: translateY(-5px);
 }
 
 /* Print-friendly styles */

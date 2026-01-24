@@ -4,6 +4,22 @@ const researchTable = document.querySelector(".main");
 
 const research = [
   {
+    title: "Inscanner: Dual-Phase Detection and Classification of Auxiliary Insulation Using YOLOv8 Models",
+    authors: "Youngtae Kim, Soonju Jeong, Sardar Arslan, Dhananjay Agnihotri, Yahya Ahmed, Ali Nawaz, Jinhee Song, Hyewon Kim",
+    conferences: "arXiv preprint arXiv:2502.18871",
+    researchYr: 2025,
+    citebox: "popup0",
+    image: "assets/images/research-page/inscanner.png",
+    citation: {
+      vancouver:
+        'Youngtae Kim, Soonju Jeong, Sardar Arslan, Dhananjay Agnihotri, Yahya Ahmed, Ali Nawaz, Jinhee Song, Hyewon Kim. "Inscanner: Dual-Phase Detection and Classification of Auxiliary Insulation Using YOLOv8 Models," arXiv preprint arXiv:2502.18871, 2025.',
+    },
+    abstract:
+      "This study proposes a two-phase methodology for detecting and classifying auxiliary insulation in structural components. In the detection phase, a YOLOv8x model is trained on a dataset of complete structural blueprints, each annotated with bounding boxes indicating areas that should contain insulation. In the classification phase, these detected insulation patches are cropped and categorized into two classes: present or missing. These are then used to train a YOLOv8x-CLS model that determines the presence or absence of auxiliary insulation. Preprocessing steps for both datasets included annotation, augmentation, and appropriate cropping of the insulation regions. The detection model achieved a mean average precision (mAP) score of 82%, while the classification model attained an accuracy of 98%.",
+    absbox: "absPopup0",
+    paper_link: "https://arxiv.org/abs/2502.18871",
+  },
+  {
     title: "Weakly-Supervised Region Proposals for Chest-Xray Disease Localization and Classification",
     authors: "Ali Nawaz, Syed Muhammad Anwar, Javed Ali Khan",
     conferences: "IEEE Transactions on Medical Imaging (T-MI) - Submitted 2023",
@@ -17,81 +33,87 @@ const research = [
     abstract:
       "This research presents a novel weakly-supervised deep learning approach for automatic disease localization and classification in chest X-ray images. Our method leverages region proposal networks to identify and classify multiple thoracic diseases without requiring pixel-level annotations. The framework achieves state-of-the-art performance on benchmark datasets including MIMIC-CXR and VinDr-PCXR, demonstrating significant improvements in both localization accuracy and classification performance compared to existing methods.",
     absbox: "absPopup1",
+    paper_link: null,
   },
   {
     title: "Melanoma Detection Using a Deep Learning Approach",
-    authors: "Sohail Manzoor, Ali Nawaz, et al.",
+    authors: "Sohail Manzoor, Huma Qayyum, Farman Hassan, Asad Ullah, Ali Nawaz, Auliya Ur Rahman",
     conferences: "International Journal of Innovations in Science & Technology (IJIST)",
     researchYr: 2022,
     citebox: "popup2",
     image: "assets/images/research-page/melanoma.png",
     citation: {
       vancouver:
-        'Manzoor, Sohail et al., "Melanoma Detection Using a Deep Learning Approach," International Journal of Innovations in Science & Technology, 2022.',
+        'Manzoor, Sohail et al., "Melanoma Detection Using a Deep Learning Approach," International Journal of Innovations in Science & Technology, vol. 4, no. 1, pp. 222–232, 2022. DOI: https://doi.org/10.33411/ijist/2022040117',
     },
     abstract:
-      "This study proposes a deep learning-based approach for automated melanoma detection from dermoscopic images. Using convolutional neural networks and transfer learning techniques, our model achieves high accuracy in distinguishing melanoma from benign skin lesions. The research contributes to early cancer detection and demonstrates the potential of AI in dermatological diagnostics.",
+      "Melanoma is a skin lesion disease; it is a skin cancer that is caused by uncontrolled growth in melanocytic tissues. Damaged cells can cause damage to nearby cells and consequently spreads cancer in other parts of the body. The aim of this research is the early detection of Melanoma disease, many researchers have already struggled and achieved success in detecting melanoma with different values for their evaluation parameters, they used different machine learning as well as deep learning approaches, and we applied deep learning approach for Melanoma detection, we used publicly available dataset for experimentation purpose. We applied deep learning algorithms ResNet50 and VGG16 for Melanoma detection; the accuracy, precision, recall, Jaccard index, and dice co-efficient of our proposed model are 92.3%, 93.3%, 90%, 9.98%, and 97.7%, respectively.",
     absbox: "absPopup2",
+    paper_link: "https://journal.50sea.com/index.php/IJIST/article/view/191",
   },
   {
     title: "Mortality Prediction in ICU Patients Using Machine Learning Models",
-    authors: "Fawad Ahmad, Ali Nawaz, et al.",
+    authors: "Fawad Ahmad, Huma Ayub, Rehan Liaqat, Akhyar Ali Khan, Ali Nawaz, Babar Younis",
     conferences: "19th International Bhurban Conference on Applied Sciences and Technology (IBCAST)",
     researchYr: 2021,
     citebox: "popup3",
     image: "assets/images/research-page/icu.png",
     citation: {
       vancouver:
-        'Ahmad, Fawad et al., "Mortality Prediction in ICU Patients Using Machine Learning Models," IBCAST, 2021.',
+        'Ahmad, Fawad et al., "Mortality Prediction in ICU Patients Using Machine Learning Models," 2021 International Bhurban Conference on Applied Sciences and Technologies (IBCAST), 2021, pp. 1-5, DOI: 10.1109/IBCAST51254.2021.9393012',
     },
     abstract:
-      "This research develops machine learning models for predicting mortality in intensive care unit (ICU) patients using clinical data. Multiple algorithms including Random Forest, XGBoost, and Neural Networks were evaluated on the MIMIC-III database. The models demonstrate high predictive accuracy and provide interpretable features for clinical decision support.",
+      "Effective utilization of limited intensive care unit (ICU) allocations is a challenging task for medical experts to save precious human lives. The prolonged ICU stay of relatively secure patients and patients with low chances of recovery can cause life-threatening effects on patients waiting for ICU accommodation. Machine learning-based techniques for early prediction of mortality can help in this regard. This paper presents two mortality prediction models using the support vector machine (SVM) and linear discriminant analysis. The proposed models use clinical data of the ICU patients for early prediction of mortality. Distribution filtering is performed using the chi-square distribution during pre-processing. A subset of the publicly available Medical Information Mart for Intensive Care (MIMIC-III v1.4) dataset is used for the evaluation of the proposed models.",
     absbox: "absPopup3",
+    paper_link: "https://ieeexplore.ieee.org/abstract/document/9393012",
   },
   {
     title: "Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm",
-    authors: "Khan, et al., Ali Nawaz",
-    conferences: "Pak-Euro Journal on Medical and Life Sciences (MAJICC)",
+    authors: "Akhyar Ali Khan, Huma Qayyum, Rehan Liaqat, Fawad Ahmad, Ali Nawaz, Babar Younis",
+    conferences: "2021 Mohammad Ali Jinnah University International Conference on Computing (MAJICC)",
     researchYr: 2021,
     citebox: "popup4",
     image: "assets/images/research-page/diabetes.png",
     citation: {
       vancouver:
-        'Khan, et al., "Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm," MAJICC, 2021.',
+        'Khan, Akhyar Ali et al., "Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm," 2021 Mohammad Ali Jinnah University International Conference on Computing (MAJICC), 2021, pp. 1-5, DOI: 10.1109/MAJICC53071.2021.9526257',
     },
     abstract:
-      "This work presents an optimized machine learning model for early prediction of Type 2 Diabetes Mellitus using gradient boosting algorithms. Feature engineering and hyperparameter optimization techniques are employed to enhance model performance. The proposed model achieves superior accuracy compared to traditional methods and provides clinically relevant insights for diabetes prevention.",
+      "Diabetes is a growing disease which has approximately affected 381 million people over the globe. Among diabetic patients, 30% of the adult population is diagnosed with Type 2 Diabetes Mellitus (T2DM). Predicting T2DM at early stages can help avoid serious complications at later stages. Data mining (DM) and machine learning (ML) based techniques are gaining popularity in disease diagnosis, reasons discovery, and decision making. Various research studies using DM are available in the literature to predict diabetes but there is room to improve the performance. In this study, a gradient boosting algorithm is proposed for the prediction of T2DM. We have used the PIMA Indian Diabetes dataset collected by an American institute UCI for analyzing our prediction model with 10-fold cross-validation. Our proposed model exhibits better performance as compared to various other models proposed in the literature.",
     absbox: "absPopup4",
+    paper_link: "https://ieeexplore.ieee.org/abstract/document/9526257",
   },
   {
     title: "Deep Convolutional Neural Network-Based Classification of Alzheimer's Disease Using MRI Data",
-    authors: "Ali Nawaz, Syed Muhammad Anwar, Javed Ali Khan",
+    authors: "Ali Nawaz, Syed Muhammad Anwar, Rehan Liaqat, Javid Iqbal, Ulas Bagci, Muhammad Majid",
     conferences: "23rd International Multitopic Conference (IEEE INMIC)",
     researchYr: 2020,
     citebox: "popup5",
     image: "assets/images/research-page/alzheimer.png",
     citation: {
       vancouver:
-        'Nawaz, Ali et al., "Deep Convolutional Neural Network-Based Classification of Alzheimer\'s Disease Using MRI Data," IEEE INMIC, 2020.',
+        'Nawaz, Ali et al., "Deep Convolutional Neural Network based Classification of Alzheimer\'s Disease using MRI Data," 2020 IEEE 23rd International Multitopic Conference (INMIC), 2020, pp. 1-5, DOI: 10.1109/INMIC50486.2020.9318172',
     },
     abstract:
-      "This paper proposes a deep convolutional neural network (DCNN) architecture for automated classification of Alzheimer's disease from brain MRI scans. The model employs advanced preprocessing techniques and data augmentation strategies to handle limited medical imaging datasets. Experimental results demonstrate that the proposed DCNN achieves high classification accuracy for distinguishing between different stages of Alzheimer's disease, offering potential for early diagnosis and treatment planning.",
+      "Alzheimer's disease (AD) is a progressive and incurable neurodegenerative disease which destroys brain cells and causes loss to patient's memory. Early detection can prevent the patient from further damage to the brain cells and hence avoid permanent memory loss. In the past few years, various automatic tools and techniques have been proposed for the diagnosis of AD. Several methods focus on fast, accurate, and early detection of the disease to minimize the loss to a patient's mental health. Although machine learning and deep learning techniques have significantly improved medical imaging systems for AD by providing diagnostic performance close to the human level. But the main problem faced during multi-class classification is the presence of highly correlated features in the brain structure. In this paper, we have proposed a smart and accurate way of diagnosing AD based on a two-dimensional deep convolutional neural network (2D-DCNN) using an imbalanced three-dimensional MRI dataset. Experimental results on Alzheimer's Disease Neuroimaging Initiative magnetic resonance imaging (MRI) dataset confirms that the proposed 2D-DCNN model is superior in terms of accuracy, efficiency, and robustness. The model classifies MRI into three categories: AD, mild cognitive impairment, and normal control; and has achieved 99.89% classification accuracy with imbalanced classes. The proposed model exhibits noticeable improvement in accuracy as compared to state-of-the-art methods.",
     absbox: "absPopup5",
+    paper_link: "https://ieeexplore.ieee.org/abstract/document/9318172",
   },
   {
     title: "Ordinary Learning Method for Heart Disease Detection Using Clinical Data",
-    authors: "Javid Iqbal, Ali Nawaz, et al.",
+    authors: "Javid Iqbal, Muhmmad Munwar Iqbal, Umair Khadam, Ali Nawaz",
     conferences: "3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET)",
     researchYr: 2020,
     citebox: "popup6",
     image: "assets/images/research-page/heart.png",
     citation: {
       vancouver:
-        'Iqbal, Javid et al., "Ordinary Learning Method for Heart Disease Detection Using Clinical Data," iCoMET, 2020.',
+        'Iqbal, Javid et al., "Ordinary Learning Method for Heart Disease Detection using Clinical Data," 2020 3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET), 2020, pp. 1-6, DOI: 10.1109/iCoMET48670.2020.9074056',
     },
     abstract:
-      "This research investigates the application of ordinary machine learning methods for detecting heart disease using clinical patient data. Various classification algorithms are evaluated and compared on benchmark cardiovascular disease datasets. The study provides insights into feature importance and demonstrates the effectiveness of traditional ML approaches in medical diagnosis applications.",
+      "Heart diseases are one of the major causes of human deaths today. About 610000 human beings expire annually in the United States due to this fatal disease and the condition is more severe in the underdeveloped countries lacking medical experts. Accurate detection of heart disease in a human being can be helpful in proper medication against this lethal disease and considerably reduce this alarming death rate. Data mining and machine learning techniques are being widely used for medical diagnosis these days. This research paper employs Ordinary Learning Method for the accurate detection of heart disease using clinical data. The proposed method is tested on the Standard UCI(University of California, Irvine) Cleveland Heart Disease dataset using 14 attributes. The achieved accuracy of the proposed method is 98.4615% which is compared with other states of the art techniques such as C5.0 decision trees, Support vector machine, KNN and Neural Network. Comparison results show that the proposed OLM technique outperforms the previous data mining techniques proposed in literature for the detection of heart disease.",
     absbox: "absPopup6",
+    paper_link: "https://ieeexplore.ieee.org/abstract/document/9074056",
   },
 ];
       vancouver:
@@ -240,6 +262,7 @@ const fillData = () => {
       citation,
       absbox,
       abstract,
+      paper_link,
     }) =>
       (output += `
             <tr data-aos="zoom-in-left"> 
@@ -250,7 +273,7 @@ const fillData = () => {
                             <img src="${image}" class="imgRes">
                         </span>
                     </div>
-                    <a href="#0" class="paperTitle"> ${title} </a> 
+                    ${paper_link ? `<a href="${paper_link}" target="_blank" rel="noopener noreferrer" class="paperTitle"> ${title} <i class="fas fa-external-link-alt" style="font-size:0.8em;margin-left:5px"></i></a>` : `<a href="#0" class="paperTitle"> ${title} </a>`}
                     <div class = "authors"> ${authors} </div> 
                     
                     <div class="rConferences"> ${conferences} 
@@ -266,6 +289,9 @@ const fillData = () => {
                         <button class="button button-accent button-small text-right button-abstract " type="button" data-toggle="collapse" data-target="#${citebox}" aria-expanded="false" aria-controls="${citebox}">
                             CITE
                         </button>
+                        ${paper_link ? `<a href="${paper_link}" target="_blank" rel="noopener noreferrer" class="button button-accent button-small text-right button-abstract" style="margin-left:5px;text-decoration:none">
+                            VIEW PAPER
+                        </a>` : ''}
                     </div>
                     <div id="${absbox}" class="collapse" aria-labelledby="headingTwo" data-parent=".collapse">
                         <div class="card-body">
