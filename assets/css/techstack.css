@@ -126,6 +126,7 @@ html[light-mode="light"] .skill-card-header h3 {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    align-items: center;
 }
 
 .skill-badge {
@@ -137,7 +138,11 @@ html[light-mode="light"] .skill-card-header h3 {
     font-weight: 500;
     border: 1px solid rgba(187, 134, 252, 0.3);
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    white-space: nowrap;
 }
 
 .skill-badge:hover {

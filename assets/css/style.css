@@ -241,6 +241,32 @@ html {
   box-shadow: 0 2px 2px rgb(230, 230, 230);
 }
 
+/* Light mode navbar styling */
+html[light-mode="light"] .navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+html[light-mode="light"] .navbar-nav .nav-link,
+html[light-mode="light"] .navbar-brand {
+  color: #333333 !important;
+}
+
+html[light-mode="light"] .navbar-nav .nav-link:hover {
+  color: #6C63FF !important;
+}
+
+html[light-mode="light"] .navbar-nav .nav-link.active {
+  color: #6C63FF !important;
+  font-weight: 600;
+}
+
+html[light-mode="light"] .first,
+html[light-mode="light"] .second,
+html[light-mode="light"] .third {
+  background-color: #333333 !important;
+}
+
 /* Dark Mode toggle switch button */
 .dark_toggler {
   -webkit-appearance: none;

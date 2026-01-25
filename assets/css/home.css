@@ -137,12 +137,25 @@ a.socialicon {
   box-shadow: 2px 5px 5px var(--shadow-col);
   text-decoration: none;
   transition: var(--trans-props);
+  align-items: center;
+  justify-content: center;
 }
 .socialicon i {
   margin: auto;
   font-size: 24px;
   z-index: 1;
   transition: var(--trans-props);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialicon svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  z-index: 1;
 }
 
 /* Social icon in dark mode */
@@ -187,6 +200,26 @@ html[light-mode="dark"] .socialicon{
   justify-content: center;
 }
 
+/* Academic and Professional Icons Centering */
+.socialicon.scholar,
+.socialicon.researchgate,
+.socialicon.orcid,
+.socialicon.upwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialicon.scholar i,
+.socialicon.researchgate i,
+.socialicon.orcid i,
+.socialicon.upwork i {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .socialicon:after {
   content: "";
   width: var(--link-size);
@@ -205,7 +238,7 @@ html[light-mode="dark"] .socialicon{
 */
 
  .linkedin-icon{
-  margin-left: 15px;
+  margin: auto;
 }
 .linkedin:hover .linkedin-icon>rect{
   animation: rect-up 0.3s linear infinite;
@@ -249,7 +282,7 @@ html[light-mode="dark"] .socialicon{
 
 .instagram-icon {
   width: 90px !important;
- 
+  margin: auto;
 }
 .st0 {
   fill:none;
@@ -305,7 +338,7 @@ html[light-mode="dark"] .socialicon{
 */
 .twitter-icon{
   width: 40px;
-  margin-left: 12px;
+  margin: auto;
 }
 
 .twitter:hover #wing1{
@@ -335,8 +368,7 @@ html[light-mode="dark"] .github-icon{
 
 .github-icon {
   width: 40px;
-  margin-left: 12px;
-  margin-top: 5px;
+  margin: auto;
   fill: #000000;
 }
 
@@ -351,47 +383,45 @@ html[light-mode="dark"] .github-icon{
  }
 
  /*
-  --------------------------
-     DRIBBBLE MICROANIMATION
-  --------------------------
-  */
-  
-  .dribbble-icon{
-    width: 30px;
-    height: 30px;
-    margin-left:16px;
-    margin-top: 20px;
-  }
-  
-  .dribbble:hover .dribbble-icon{ 
-      animation: dribbble-bounce .4s ease infinite;
-      transform: rotate(360deg);
-      transition: all 9s ease-in-out 0s;
-  }
-  
-  @keyframes dribbble-bounce {
-    from, to {
-      margin-top: 20px;
-    }
-    50% { 
-      margin-top: 15px; 
-    }
-    
-    75%{
-      margin-top: 15px;
-    }
-  }
-  
-  /*
-  --------------------------
-     CODEFORCES MICROANIMATION
-  --------------------------
-  */
-  
-  .codeforces-icon{
-    margin-right: 6px;
-    margin-top: 6px;
-  }
+ --------------------------
+    DRIBBBLE MICROANIMATION
+ --------------------------
+ */
+ 
+ .dribbble-icon{
+   width: 30px;
+   height: 30px;
+   margin: auto;
+ }
+ 
+ .dribbble:hover .dribbble-icon{ 
+     animation: dribbble-bounce .4s ease infinite;
+     transform: rotate(360deg);
+     transition: all 9s ease-in-out 0s;
+ }
+ 
+ @keyframes dribbble-bounce {
+   from, to {
+     transform: translateY(0);
+   }
+   50% { 
+     transform: translateY(-5px); 
+   }
+   
+   75%{
+     transform: translateY(-5px);
+   }
+ }
+ 
+ /*
+ --------------------------
+    CODEFORCES MICROANIMATION
+ --------------------------
+ */
+ 
+ .codeforces-icon{
+   margin: auto;
+ }
   
   .codeforces-icon .red {
     height:4px;
