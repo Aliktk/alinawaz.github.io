@@ -7,7 +7,7 @@ const projectcards = document.querySelector(".projectcards");
 const projects = [
   {
     title: "AURA & LEAH - Self-Healing IT Platform",
-    cardImage: "assets/images/project-page/real.png",
+    cardImage: "assets/images/real.png",
     description: "🤖 Revolutionary enterprise AI platform: AURA (desktop agent) + LEAH (Azure OpenAI backend). Features: LangGraph agents with 30+ tools, vector search (Azure AI), correlation engine (Z-score + FDR), adaptive learning from technician feedback, PostgreSQL LISTEN/NOTIFY workflow. Autonomous detection, diagnosis & resolution with intelligent rollback. Real-time WebSocket communication, customer portal (Next.js), 4-trigger learning system. Production-grade self-healing for Windows fleets.",
     tagimg: "https://img.icons8.com/color/96/microsoft.png",
     Previewlink: "",
@@ -117,7 +117,7 @@ const showCards = () => {
   projects.forEach(({ title, cardImage, Previewlink, Githublink }) => {
     output += `       
         <div class="column skill-card card" style="margin: 15px"data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600" >
-          <div class="wrapper" style="background: url(${cardImage}) center / cover no-repeat;">
+          <div class="wrapper" style="background: url(${cardImage}) center / contain no-repeat;">
             <div class="header">
             </div>
             <div class="data">

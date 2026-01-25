@@ -102,10 +102,7 @@ const showResearchCards = () => {
     output += `
       <div class="card card1" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="margin: 20px 0;">
         <div class="row no-gutters">
-          <div class="col-md-3">
-            <img src="${paper.image}" class="card-img research-paper-img" alt="${paper.title}" style="height: 100%; object-fit: cover; border-radius: 10px 0 0 10px;">
-          </div>
-          <div class="col-md-9">
+          <div class="col-md-12">
             <div class="card-body">
               <a href="${paper.link}" target="_blank" class="paperTitle" style="text-decoration: none;">
                 <h4 class="card-title" style="color: #bb86fc; font-weight: bold;">${paper.title}</h4>
