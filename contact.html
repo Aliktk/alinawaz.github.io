@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <link rel="stylesheet" href="assets/css/preloader.css">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/cursor.css">
@@ -197,19 +198,22 @@
         }
         
         .contact-form {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(108, 99, 255, 0.1) 100%);
             padding: 40px;
             border-radius: 15px;
+            border: 2px solid rgba(187, 134, 252, 0.2);
         }
         
         body[light-mode="dark"] .contact-form {
-            background: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, rgba(187, 134, 252, 0.15) 0%, rgba(108, 99, 255, 0.15) 100%);
+            border: 2px solid rgba(187, 134, 252, 0.3);
         }
         
         .form-group label {
             font-weight: 600;
             color: #333;
             margin-bottom: 10px;
+            display: block;
         }
         
         body[light-mode="dark"] .form-group label {
@@ -217,28 +221,35 @@
         }
         
         .form-control {
-            border: 2px solid #e0e0e0;
+            border: 2px solid rgba(187, 134, 252, 0.3);
             border-radius: 10px;
             padding: 12px 20px;
             font-size: 1rem;
             transition: all 0.3s ease;
+            width: 100%;
         }
         
         .form-control:focus {
             border-color: #bb86fc;
             box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.25);
+            outline: none;
         }
         
         body[light-mode="dark"] .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(187, 134, 252, 0.1);
+            border-color: rgba(187, 134, 252, 0.4);
             color: #fff;
+        }
+        
+        body[light-mode="dark"] .form-control:focus {
+            background: rgba(187, 134, 252, 0.15);
+            border-color: #bb86fc;
         }
         
         .btn-submit {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%);
             color: white;
             border: none;
             border-radius: 10px;
@@ -250,7 +261,7 @@
         
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 25px rgba(187, 134, 252, 0.4);
         }
         
         .social-connect {
@@ -258,6 +269,7 @@
             margin-top: 50px;
             padding-top: 30px;
             border-top: 2px solid #e0e0e0;
+            grid-column: 1 / -1;
         }
         
         body[light-mode="dark"] .social-connect {
@@ -265,26 +277,35 @@
         }
         
         .social-connect h3 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #333;
+            font-size: 1.8rem;
         }
         
         body[light-mode="dark"] .social-connect h3 {
             color: #fff;
         }
         
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             background: #bb86fc;
             color: white;
             border-radius: 50%;
-            margin: 0 10px;
             font-size: 1.5rem;
             transition: transform 0.3s ease, background 0.3s ease;
+            text-decoration: none;
         }
         
         .social-links a:hover {
@@ -342,7 +363,7 @@
                         <i class="fas fa-envelope"></i>
                         <div class="contact-item-content">
                             <h4>Email</h4>
-                            <p><a href="mailto:aliktk@hotmail.com">aliktk@hotmail.com</a></p>
+                            <p><a href="mailto:nawazktk99@gmail.com">nawazktk99@gmail.com</a></p>
                         </div>
                     </div>
                     
