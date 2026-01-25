@@ -115,9 +115,11 @@ const projects = [
 const showCards = () => {
   let output = "";
   projects.forEach(({ title, cardImage, Previewlink, Githublink }) => {
+    // Encode the image path to handle spaces and special characters
+    const encodedImage = cardImage.replace(/ /g, '%20');
     output += `       
         <div class="column skill-card card" style="margin: 15px"data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600" >
-          <div class="wrapper" style="background: url(${cardImage}) center / contain no-repeat;">
+          <div class="wrapper" style="background: url(${encodedImage}) center / contain no-repeat;">
             <div class="header">
             </div>
             <div class="data">

@@ -6,7 +6,7 @@ const moocs = document.querySelector(".moocs");
 const moocscards = [
   {
     title: "Machine and Deep Learning",
-    cardImage: "assets/images/education-page/dice-analytics.png",
+    cardImage: "assets/images/dice.png",
     moocLink: "#",
     issuer: "DICE Analytics",
     date: "Dec 2019"
@@ -27,35 +27,35 @@ const moocscards = [
   },
   {
     title: "Artificial Intelligence [ML/DL]",
-    cardImage: "assets/images/education-page/navttc.png",
+    cardImage: "assets/images/navttc.jpg",
     moocLink: "#",
     issuer: "NAVTTC",
     date: "March 2020"
   },
   {
     title: "National Freelancing Training",
-    cardImage: "assets/images/education-page/mitt.png",
+    cardImage: "assets/images/mitt.jpg",
     moocLink: "#",
     issuer: "MITT",
     date: "July 2020"
   },
   {
     title: "Professional Python Programming",
-    cardImage: "assets/images/education-page/pseb.png",
+    cardImage: "assets/images/pseb.png",
     moocLink: "#",
     issuer: "PSEB",
     date: "Aug 2020"
   },
   {
     title: "SCRUM Product Owner",
-    cardImage: "assets/images/education-page/pseb.png",
+    cardImage: "assets/images/pseb.png",
     moocLink: "#",
     issuer: "PSEB",
     date: "Aug 2020"
   },
   {
     title: "E-Rozgaar on Creative Design",
-    cardImage: "assets/images/education-page/pitb.png",
+    cardImage: "assets/images/pitb.jpg",
     moocLink: "#",
     issuer: "PITB",
     date: "Sep 2020"
@@ -69,28 +69,28 @@ const moocscards = [
   },
   {
     title: "Python for Data Science Chilla",
-    cardImage: "assets/images/education-page/codanics.png",
+    cardImage: "assets/images/codanic.jpg",
     moocLink: "#",
     issuer: "Codanics",
     date: "Feb 2022"
   },
   {
     title: "ChatGPT Prompt Engineering",
-    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    cardImage: "assets/images/deeplearning.png",
     moocLink: "#",
     issuer: "deeplearning.ai",
     date: "2023"
   },
   {
     title: "Pair Programming with LLM",
-    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    cardImage: "assets/images/deeplearning.png",
     moocLink: "#",
     issuer: "deeplearning.ai",
     date: "2023"
   },
   {
     title: "Finetuning Large Language Models",
-    cardImage: "assets/images/education-page/deeplearning-ai.png",
+    cardImage: "assets/images/deeplearning.png",
     moocLink: "#",
     issuer: "deeplearning.ai",
     date: "2023"
@@ -146,7 +146,7 @@ const showCards = () => {
             <div class="card mb-3 mx-auto">
                <div class="content">
                   <div class="content-overlay"></div>
-                    <img src=${cardImage} class="card-img-top content-image">     
+                    <img src=${cardImage} class="card-img-top content-image" style="width: 100%; height: 150px; object-fit: contain; padding: 10px; background: white;">     
                   <div class="content-details fadeIn-bottom">
                     ${moocLink !== '#' ? `<a href="${moocLink}" target="_blank"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>` : ''}                                   
                   </div>
