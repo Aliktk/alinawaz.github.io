@@ -130,8 +130,8 @@ if (allElements.length > 0) {
 
         let spans = txtElement.childNodes;
 
-        // It sets the interval between each letter showing
-        const letterInterval = setInterval(activeLetter, 70);
+        // It sets the interval between each letter showing (increased from 70ms to 100ms for slower typing)
+        const letterInterval = setInterval(activeLetter, 100);
 
         function activeLetter() {
           spans[count].classList.add("active");
@@ -140,16 +140,16 @@ if (allElements.length > 0) {
           if (count === spans.length) {
             clearInterval(letterInterval);
 
-            // It waits 4 seconds to start erasing the word
+            // It waits before starting to erase the word (increased from 600ms to 1500ms)
             setTimeout(() => {
               eraseText();
-            }, 600);
+            }, 1500);
           }
         }
 
         function eraseText() {
-          // It sets the interval between each letter hiding
-          let removeInterval = setInterval(removeLetter, 40);
+          // It sets the interval between each letter hiding (increased from 40ms to 60ms)
+          let removeInterval = setInterval(removeLetter, 60);
           count--;
 
           function removeLetter() {

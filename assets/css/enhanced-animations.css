@@ -350,6 +350,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden; /* Prevent icon overflow */
 }
 
 .socialicon {
@@ -360,6 +361,8 @@
     height: 40px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     flex-shrink: 0;
+    overflow: hidden; /* Prevent individual icon overflow */
+    position: relative; /* For proper positioning */
 }
 
 .socialicon:hover {
@@ -373,12 +376,14 @@
     max-width: 40px;
     max-height: 40px;
     object-fit: contain;
+    display: block; /* Remove any inline spacing */
 }
 
 .socialicon i {
     transition: transform 0.3s ease;
     font-size: 1.8rem !important;
     line-height: 1;
+    display: block; /* Remove any inline spacing */
 }
 
 .socialicon:hover i {
