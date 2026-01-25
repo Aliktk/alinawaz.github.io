@@ -18,7 +18,7 @@ const projects = [
     cardImage: "assets/images/mynatek.png",
     description: "🏥 Revolutionary healthcare AI combining ST-GCN pose estimation + YOLOv11 segmentation for real-time hygiene monitoring. Edge-deployed system with custom action recognition, automated surface detection & comprehensive training pipelines. Industry-leading accuracy for patient safety.",
     tagimg: "https://img.icons8.com/color/96/pytorch.png",
-    Previewlink: "https://github.com/Aliktk/mynatek-hospital-cleaning",
+    Previewlink: "https://mynatek.com/",
     Githublink: "https://github.com/Aliktk/mynatek-hospital-cleaning",
   },
   {

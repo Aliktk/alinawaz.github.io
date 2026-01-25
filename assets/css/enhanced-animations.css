@@ -426,10 +426,21 @@
 
 .socialicon.facebook i {
     font-size: 1.85rem !important;
+    display: flex !important;
+    margin: auto;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
 }
 
 .socialicon.kaggle i {
     font-size: 1.75rem !important;
+    display: flex !important;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Research Paper Links Styling */

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" light-mode="dark">
+
+<head>
+    <title>Contact Ali Nawaz | AI/ML Engineer | Hire for Projects & Consulting</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="hire AI engineer, ML consulting, computer vision expert, hire Ali Nawaz, AI consultation, freelance ML engineer, AI project development" />
+    <meta name="description" content="Get in touch with Ali Nawaz for AI/ML projects, consulting services, and collaboration opportunities. Specializing in Computer Vision, NLP, LLMs, and enterprise AI solutions." />
+    <meta name="author" content="Ali Nawaz">
+    
+    <!-- Robot.txt -->
+    <meta name="robots" content="index,follow" />
+    <meta name="Googlebot" content="index,follow" />
+    <meta name="AdsBot-Google" content="index,follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Contact Ali Nawaz - AI/ML Engineer">
+    <meta property="og:title" content="Contact Ali Nawaz | AI/ML Engineering Services">
+    <meta property="og:description" content="Senior AI/ML Engineer available for consulting, project development, and collaboration. Expert in Computer Vision, NLP, and LLM solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio.alinawaz.codes/contact.html">
+    <meta property="og:image" content="https://portfolio.alinawaz.codes/assets/images/my_photo.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@engr_ali_nawaz">
+    <meta name="twitter:title" content="Contact Ali Nawaz | AI/ML Engineer">
+    <meta name="twitter:description" content="Get in touch for AI/ML consulting and project development services.">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cursor.css">
+    <link rel="stylesheet" href="assets/css/enhanced-animations.css">
+    <link id='favicon' rel="icon" href="assets/images/favicon.png" type="image/png">
+    <script defer src="./assets/js/dynamicTitle.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M11CMZ12Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M11CMZ12Q');
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        body[light-mode="dark"] {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 20px;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        body[light-mode="dark"] .contact-card {
+            background: rgba(30, 30, 30, 0.95);
+            color: #fff;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .contact-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        body[light-mode="dark"] .contact-header p {
+            color: #aaa;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        body[light-mode="dark"] .contact-info h3 {
+            color: #fff;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        body[light-mode="dark"] .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-right: 20px;
+            width: 40px;
+        }
+        
+        .contact-item-content h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .contact-item-content p {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        body[light-mode="dark"] .contact-item-content p {
+            color: #fff;
+        }
+        
+        .contact-item-content a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .services-section {
+            margin-top: 40px;
+        }
+        
+        .services-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        body[light-mode="dark"] .services-section h3 {
+            color: #fff;
+        }
+        
+        .service-tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-form {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        body[light-mode="dark"] .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        body[light-mode="dark"] .form-group label {
+            color: #fff;
+        }
+        
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        body[light-mode="dark"] .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .social-connect {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        body[light-mode="dark"] .social-connect {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-connect h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        body[light-mode="dark"] .social-connect h3 {
+            color: #fff;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: #764ba2;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+        
+        .success-message {
+            display: none;
+            padding: 20px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            color: #155724;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body class="no-scroll-preload">
+    <!-- loader -->
+    <div class="loader-container">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron-alpha"></div>
+            <div class="electron-omega"></div>
+        </div>
+    </div>
+
+    <!--Dynamic Nav Bar-->
+    
+    <div class="contact-container" style="padding-top: 100px;">
+        <div class="contact-card">
+            <div class="contact-header">
+                <h1>Let's Work Together</h1>
+                <p>Available for consulting, projects, and collaboration opportunities<span class="status-badge">🟢 Available</span></p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:aliktk@hotmail.com">aliktk@hotmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="contact-item-content">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/ali-nawaz-khattak/" target="_blank">ali-nawaz-khattak</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div class="contact-item-content">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/Aliktk" target="_blank">@Aliktk</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-content">
+                            <h4>Location</h4>
+                            <p>Pakistan (Remote Worldwide)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="services-section">
+                        <h3>Services I Offer</h3>
+                        <span class="service-tag">🤖 AI/ML Consulting</span>
+                        <span class="service-tag">👁️ Computer Vision</span>
+                        <span class="service-tag">💬 NLP & LLMs</span>
+                        <span class="service-tag">🏥 Medical Imaging AI</span>
+                        <span class="service-tag">🔍 RAG Systems</span>
+                        <span class="service-tag">🚀 MLOps & Deployment</span>
+                        <span class="service-tag">📊 Data Science</span>
+                        <span class="service-tag">🎓 Technical Training</span>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px; color: #fff; font-size: 1.8rem; font-weight: 600;">
+                        <i class="fas fa-envelope" style="color: #bb86fc;"></i> Get in Touch
+                    </h3>
+                    
+                    <div class="success-message" id="successMessage" style="display: none; background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3); animation: slideInDown 0.5s ease;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                        <strong>Thank you!</strong> Your message has been sent successfully. I'll get back to you within 24 hours.
+                    </div>
+                    
+                    <form action="https://formspree.io/f/xpwagbze" method="POST" id="contactForm">
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label for="name" style="color: #bb86fc; font-weight: 600; margin-bottom: 10px; display: block; font-size: 0.95rem;">
+                                <i class="fas fa-user"></i> Your Name *
+                            </label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="John Doe" 
+                                style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(187, 134, 252, 0.3); color: white; padding: 15px 20px; border-radius: 10px; font-size: 1rem; transition: all 0.3s;"
+                                onfocus="this.style.borderColor='#bb86fc'; this.style.boxShadow='0 0 0 4px rgba(187, 134, 252, 0.1)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                onblur="this.style.borderColor='rgba(187, 134, 252, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(255, 255, 255, 0.05)'">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label for="email" style="color: #bb86fc; font-weight: 600; margin-bottom: 10px; display: block; font-size: 0.95rem;">
+                                <i class="fas fa-envelope"></i> Your Email *
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="john@example.com"
+                                style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(187, 134, 252, 0.3); color: white; padding: 15px 20px; border-radius: 10px; font-size: 1rem; transition: all 0.3s;"
+                                onfocus="this.style.borderColor='#bb86fc'; this.style.boxShadow='0 0 0 4px rgba(187, 134, 252, 0.1)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                onblur="this.style.borderColor='rgba(187, 134, 252, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(255, 255, 255, 0.05)'">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label for="subject" style="color: #bb86fc; font-weight: 600; margin-bottom: 10px; display: block; font-size: 0.95rem;">
+                                <i class="fas fa-tag"></i> Subject *
+                            </label>
+                            <select class="form-control" id="subject" name="subject" required
+                                style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(187, 134, 252, 0.3); color: white; padding: 15px 20px; border-radius: 10px; font-size: 1rem; transition: all 0.3s; cursor: pointer;"
+                                onfocus="this.style.borderColor='#bb86fc'; this.style.boxShadow='0 0 0 4px rgba(187, 134, 252, 0.1)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                onblur="this.style.borderColor='rgba(187, 134, 252, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(255, 255, 255, 0.05)'">
+                                <option value="" style="background: #1a1a2e; color: #888;">-- Select an option --</option>
+                                <option value="Job Opportunity" style="background: #1a1a2e; color: white;">💼 Job Opportunity</option>
+                                <option value="Freelance Project" style="background: #1a1a2e; color: white;">🚀 Freelance Project</option>
+                                <option value="Consulting" style="background: #1a1a2e; color: white;">💡 Consulting Services</option>
+                                <option value="Collaboration" style="background: #1a1a2e; color: white;">🤝 Collaboration</option>
+                                <option value="Speaking" style="background: #1a1a2e; color: white;">🎤 Speaking Engagement</option>
+                                <option value="Other" style="background: #1a1a2e; color: white;">📧 Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label for="message" style="color: #bb86fc; font-weight: 600; margin-bottom: 10px; display: block; font-size: 0.95rem;">
+                                <i class="fas fa-comment-dots"></i> Message *
+                            </label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..."
+                                style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(187, 134, 252, 0.3); color: white; padding: 15px 20px; border-radius: 10px; font-size: 1rem; transition: all 0.3s; resize: vertical; min-height: 140px;"
+                                onfocus="this.style.borderColor='#bb86fc'; this.style.boxShadow='0 0 0 4px rgba(187, 134, 252, 0.1)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                onblur="this.style.borderColor='rgba(187, 134, 252, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(255, 255, 255, 0.05)'"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit" 
+                            style="width: 100%; background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%); color: white; border: none; padding: 18px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 30px rgba(187, 134, 252, 0.3); display: flex; align-items: center; justify-content: center; gap: 10px;"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(187, 134, 252, 0.5)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(187, 134, 252, 0.3)'">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Social Connect -->
+            <div class="social-connect">
+                <h3>Connect on Social Media</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/engr_ali_nawaz" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ali-nawaz-khattak/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Aliktk" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/alinawazktk" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://orcid.org/my-orcid?orcid=0000-0002-1335-4225" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    
+    <script>
+        // Form submission tracking
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Track form submission
+            gtag('event', 'form_submit', {
+                'event_category': 'Contact',
+                'event_label': 'Contact Form',
+                'value': 1
+            });
+            
+            // Show success message after submission (Formspree handles the actual submission)
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        });
+        
+        // Track social link clicks
+        document.querySelectorAll('.social-links a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                gtag('event', 'click', {
+                    'event_category': 'Social',
+                    'event_label': this.getAttribute('title'),
+                    'value': 1
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+

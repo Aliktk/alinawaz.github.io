@@ -1,84 +1,113 @@
 AOS.init();
 
-//  Tech Stacks cards
-
-const techStackCards = document.querySelector(".techstack-box");
-const techStack = [
+// Core Skills Categories
+const skillsCategories = [
   {
-    langImage: "assets/images/techstack-page/html.png",
-    langName: "HyperText Markup Language",
-    langDesc: "<li>The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser</li>",
+    category: "Languages",
+    icon: "fas fa-code",
+    color: "#bb86fc",
+    skills: ["C", "C++", "Python"]
   },
   {
-    langImage: "assets/images/techstack-page/css.png",
-    langName: "Cascading Style Sheets",
-    langDesc: "<li>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML</li>",
+    category: "AI & Machine Learning",
+    icon: "fas fa-brain",
+    color: "#6C63FF",
+    skills: ["Machine Learning", "Deep Learning", "Computer Vision", "NLP", "LLM", "OpenAI"]
   },
   {
-    langImage: "assets/images/techstack-page/javascript.png",
-    langName: "JavaScript",
-    langDesc: "<li>JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS</li>",
+    category: "Frameworks",
+    icon: "fas fa-layer-group",
+    color: "#bb86fc",
+    skills: ["Flask", "Fast API", "PyTorch", "TensorFlow"]
   },
   {
-    langImage: "assets/images/techstack-page/node.png",
-    langName: "Node",
-    langDesc: "<li>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser</li>",
+    category: "Front End",
+    icon: "fas fa-palette",
+    color: "#6C63FF",
+    skills: ["HTML", "HTML5", "CSS", "Bootstrap"]
   },
   {
-    langImage: "assets/images/techstack-page/python.png",
-    langName: "Python",
-    langDesc: "<li>Python is an interpreted high-level general-purpose programming language</li>",
+    category: "Databases",
+    icon: "fas fa-database",
+    color: "#bb86fc",
+    skills: ["PostgreSQL", "SQLite"]
   },
   {
-    langImage: "assets/images/techstack-page/cpp.png",
-    langName: "C++",
-    langDesc: "<li>C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or C with Classes</li>",
+    category: "Cloud & Deployment",
+    icon: "fas fa-cloud",
+    color: "#6C63FF",
+    skills: ["AWS EC2", "AWS (Intermediate)"]
   },
   {
-    langImage: "assets/images/techstack-page/git.png",
-    langName: "Git",
-    langDesc: "<li>Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.</li>",
+    category: "Real-time Streaming",
+    icon: "fas fa-video",
+    color: "#bb86fc",
+    skills: ["RTMP", "UDP", "TCP", "ffmpeg", "h264"]
   },
   {
-    langImage: "assets/images/techstack-page/bootstrap.png",
-    langName: "Bootstrap",
-    langDesc: "<li>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development</li>",
+    category: "Unit Testing",
+    icon: "fas fa-vial",
+    color: "#6C63FF",
+    skills: ["Python Unit Test", "Pytest"]
   },
   {
-    langImage: "assets/images/techstack-page/react.png",
-    langName: "React",
-    langDesc: "<li>React is a free and open-source front-end JavaScript library for building user interfaces based on UI components</li>",
+    category: "APIs",
+    icon: "fas fa-plug",
+    color: "#bb86fc",
+    skills: ["Fast API", "RESTful APIs"]
   },
   {
-    langImage:"assets/images/techstack-page/c.png",
-    langName:"C",
-    langDesc:"<li>C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system</li>"
+    category: "API Testing",
+    icon: "fas fa-flask",
+    color: "#6C63FF",
+    skills: ["Thunder Client", "Postman"]
   },
+  {
+    category: "Research & Technical Writing",
+    icon: "fas fa-file-alt",
+    color: "#bb86fc",
+    skills: ["MS 365", "Overleaf", "LaTeX"]
+  },
+  {
+    category: "Operating Systems",
+    icon: "fas fa-desktop",
+    color: "#6C63FF",
+    skills: ["Windows", "Linux", "Windows Servers"]
+  },
+  {
+    category: "Project & Task Management",
+    icon: "fas fa-tasks",
+    color: "#bb86fc",
+    skills: ["Jira", "Agile", "Scrum", "Trello"]
+  },
+  {
+    category: "Graphic Designing",
+    icon: "fas fa-paint-brush",
+    color: "#6C63FF",
+    skills: ["Photoshop", "Illustrator", "Lightroom", "CorelDraw", "Canva"]
+  }
 ];
 
-const displayTechStacksCards = () => {
-  const entireCardTemplate =
-  techStack.map((stack)=> {
+const techStackCards = document.querySelector(".techstack-box");
+
+const displaySkillsCards = () => {
+  const entireCardTemplate = skillsCategories.map((category)=> {
       return `        
-    <div class="row page-content techstackcards" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="0" data-aos-duration="400"> 
-        <div class="tech_card">
-            <div class="card_img">
-                <img src ="${stack.langImage}" class="featured_image">
+    <div class="skill-category-card" data-aos="fade-up" data-aos-easing="ease-out" data-aos-delay="100" data-aos-duration="500"> 
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <i class="${category.icon}" style="color: ${category.color}; font-size: 2.5rem; margin-bottom: 15px;"></i>
+                <h3 style="color: ${category.color}; font-weight: 700; font-size: 1.4rem; margin-bottom: 20px;">${category.category}</h3>
             </div>
-            <div class="card_header">
-                <header>
-                    <div class="text-center langName">
-                        <h4>${stack.langName}</h4>
-                    </div>
-                </header>
-                <ul class="description">
-                ${stack.langDesc}
-            </ul>
+            <div class="skill-card-body">
+                <div class="skills-list">
+                    ${category.skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
+                </div>
             </div>
         </div>
     </div>
       `}).join('');
   techStackCards.innerHTML = entireCardTemplate;
 };
-// displayTechStacksCards(techStack)
-document.addEventListener("DOMContentLoaded", displayTechStacksCards);
+
+document.addEventListener("DOMContentLoaded", displaySkillsCards);

@@ -114,12 +114,14 @@ const showResearchCards = () => {
                 <span class="badge badge-success" style="margin-right: 10px; background: #4caf50;">${paper.views}</span>
                 <span class="badge badge-info" style="background: #2196f3;">${paper.accuracy}</span>
               </div>
-              <button class="button-abstract" onclick="toggleAbstract(${paper.id})" style="margin-top: 10px;">
-                ABSTRACT <i class="fas fa-chevron-down" id="icon-${paper.id}"></i>
-              </button>
-              <a href="${paper.link}" target="_blank" class="button-abstract" style="background-color: #4caf50; margin-left: 10px;">
-                VIEW PAPER <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="button-abstract" onclick="toggleAbstract(${paper.id})" style="margin: 0;">
+                  <i class="fas fa-book-open"></i> ABSTRACT
+                </button>
+                <a href="${paper.link}" target="_blank" class="button-abstract" style="background: #4caf50; border-color: #4caf50; margin: 0;">
+                  <i class="fas fa-external-link-alt"></i> VIEW PAPER
+                </a>
+              </div>
               <div id="abstract-${paper.id}" class="abstract-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(187, 134, 252, 0.1); border-radius: 8px; border-left: 4px solid #bb86fc;">
                 <p style="text-align: justify; line-height: 1.6;">${paper.abstract}</p>
                 <p style="margin-top: 10px;"><strong>DOI:</strong> <a href="https://doi.org/${paper.doi}" target="_blank" style="color: #bb86fc;">${paper.doi}</a></p>

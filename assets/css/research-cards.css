@@ -25,14 +25,32 @@
   margin-bottom: 25px;
   border-left: 5px solid #bb86fc;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+#researchDetailsTable tr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(212, 165, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 #researchDetailsTable tr:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(187, 134, 252, 0.4);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(187, 134, 252, 0.5);
+  border-left-color: #d4a5ff;
+}
+
+#researchDetailsTable tr:hover::before {
+  opacity: 1;
 }
 
 #researchDetailsTable td {
@@ -60,12 +78,15 @@
   display: block;
   text-decoration: none;
   line-height: 1.5;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .paperTitle:hover {
   color: #d4a5ff;
   text-decoration: none;
+  transform: translateX(5px);
 }
 
 .authors {
@@ -111,23 +132,43 @@
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 2px solid transparent;
+  border: 2px solid #bb86fc;
   cursor: pointer;
   background: #2a2a2a;
   color: #bb86fc;
-  border-color: #bb86fc;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-abstract::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button-abstract:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .button-abstract:hover {
   background: #bb86fc;
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(187, 134, 252, 0.5);
   text-decoration: none;
+  border-color: #d4a5ff;
 }
 
 .collapse {

@@ -35,45 +35,127 @@ html {
 
 /* Tech Stack Cards */
 .techstack-box{
-    /* position: absolute; */
-    /* left: 0; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
     justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
 }
-.tech_card{
+
+.skill-category-card {
+    flex: 0 1 calc(33.333% - 30px);
+    min-width: 300px;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    border-top: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(187, 134, 252, 0.4), 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-top-color: #bb86fc;
+}
+
+html[light-mode="light"] .skill-card {
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+html[light-mode="light"] .skill-card:hover {
+    box-shadow: 0 20px 50px rgba(78, 0, 187, 0.2), 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.skill-card-header i {
+    display: block;
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover .skill-card-header i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.skill-card-header h3 {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #bb86fc;
+}
+
+html[light-mode="light"] .skill-card-header h3 {
+    color: #4e00bb;
+}
+
+.skill-card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.skills-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 13px;
-    background-color: rgb(65, 62, 65);
-    width: 45.7vw;
-    margin:3.5em 30px;
-    padding: 20px;
-    box-shadow: 0px 0px 15px 2px black;
 }
-html[light-mode="light"] .tech_card{
-    background-color: white;
-    color: #303030;
-    box-shadow: 0px 0px 10px #303030;
+
+.skill-badge {
+    background: rgba(187, 134, 252, 0.15);
+    color: #d4a5ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-.tech_card img{
-    width: 120px;
-    height: 120px;
-    /* border: 1px solid black; */
-    /* box-shadow: 8px 8px 7px black; */
-    border-radius: 8px;
-    margin-bottom: 8px;
-    padding: 20px;
-    
+
+.skill-badge:hover {
+    background: rgba(187, 134, 252, 0.3);
+    border-color: #bb86fc;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3);
 }
-.tech_card h4{
-    font-weight: bold;
-    font-family: cursive;
+
+html[light-mode="light"] .skill-badge {
+    background: rgba(78, 0, 187, 0.1);
+    color: #4e00bb;
+    border-color: rgba(78, 0, 187, 0.3);
+}
+
+html[light-mode="light"] .skill-badge:hover {
+    background: rgba(78, 0, 187, 0.2);
+    border-color: #4e00bb;
 }
 .main-heading{
     font-weight: 700;
@@ -279,16 +361,17 @@ html[light-mode="light"] .project_item a{
     text-decoration: none;
 }
 @media (max-width:1180px){
-    .tech_card{
-        width: 45vw;
+    .skill-category-card {
+        flex: 0 1 calc(50% - 30px);
     }
     .techstack-box{
         justify-content: center !important;
     }
 }
 @media (max-width:1000px){
-    .tech_card{
-        width: 90vw;
+    .skill-category-card {
+        flex: 0 1 100%;
+        max-width: 600px;
     }
 }
 @media (max-width:450px){
@@ -310,7 +393,11 @@ html[light-mode="light"] .project_item a{
     .techstack-box{
         justify-content: center;
     }
-    .tech_card{
-        width: 95vw;
+    .skill-category-card {
+        min-width: 100%;
+    }
+    .skill-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }

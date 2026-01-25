@@ -193,7 +193,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   box-shadow: 0 19px 38px var(--shadow1), 0 15px 12px var(--shadow2);
-  background-size: contain !important;
+  background-size: 80% auto !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
