@@ -209,6 +209,7 @@
         .newsletter-form {
             display: flex;
             gap: 10px;
+            align-items: stretch;
         }
         
         .newsletter-form input {
@@ -219,6 +220,7 @@
             background: rgba(255, 255, 255, 0.05);
             color: white;
             font-size: 1rem;
+            min-height: 52px;
         }
         
         .newsletter-form input:focus {
@@ -228,14 +230,20 @@
         }
         
         .newsletter-form button {
-            padding: 15px 30px;
+            padding: 15px 35px;
             background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%);
             border: none;
             border-radius: 50px;
             color: white;
             font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 130px;
         }
         
         .newsletter-form button:hover {
@@ -289,8 +297,9 @@
         <div class="newsletter-box">
             <h3>📧 Get Notified</h3>
             <p>Be the first to know when I publish new articles</p>
-            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
-                <input type="email" placeholder="your@email.com" required>
+            <form class="newsletter-form" action="https://formspree.io/f/xpwagbze" method="POST">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <input type="hidden" name="subject" value="Blog Newsletter Subscription">
                 <button type="submit">Subscribe</button>
             </form>
             <div id="newsletter-message" style="margin-top: 15px; color: #28a745; display: none;"></div>
@@ -360,29 +369,17 @@
     <script src="assets/js/cursor.js"></script>
     
     <script>
-        function handleNewsletterSignup(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            const message = document.getElementById('newsletter-message');
-            
-            // Track in Google Analytics
-            gtag('event', 'newsletter_signup', {
-                'event_category': 'Engagement',
-                'event_label': 'Blog Newsletter',
-                'value': 1
+        // Track newsletter signup
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function() {
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Blog Newsletter',
+                    'value': 1
+                });
             });
-            
-            // Show success message
-            message.textContent = '✅ Thanks! You\'ll be notified when new content is published.';
-            message.style.display = 'block';
-            
-            // Reset form
-            event.target.reset();
-            
-            // You can integrate with email service like Mailchimp, ConvertKit, etc.
-            // fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
         }
     </script>
 </body>
 </html>
-
