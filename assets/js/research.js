@@ -1,7 +1,7 @@
 AOS.init();
 
 // Research Papers Section - Interactive Cards
-const researchSection = document.querySelector(".research-cards-section");
+const researchSection = document.querySelector(".research-papers-container");
 
 const researchPapers = [
   {
@@ -98,36 +98,132 @@ const researchPapers = [
 
 const showResearchCards = () => {
   let output = "";
-  researchPapers.forEach((paper) => {
+  researchPapers.forEach((paper, index) => {
     output += `
-      <div class="card card1" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="margin: 20px 0;">
-        <div class="row no-gutters">
-          <div class="col-md-12">
-            <div class="card-body">
-              <a href="${paper.link}" target="_blank" class="paperTitle" style="text-decoration: none;">
-                <h4 class="card-title" style="color: #bb86fc; font-weight: bold;">${paper.title}</h4>
-              </a>
-              <p class="card-text" style="font-size: 0.9rem; color: #888;"><strong>Authors:</strong> ${paper.authors}</p>
-              <p class="card-text" style="font-size: 0.9rem;"><strong>${paper.publisher}</strong> | ${paper.conference} (${paper.year})</p>
-              <div class="paper-metrics" style="margin: 10px 0;">
-                <span class="badge badge-primary" style="margin-right: 10px; background: #bb86fc;">${paper.citations}</span>
-                <span class="badge badge-success" style="margin-right: 10px; background: #4caf50;">${paper.views}</span>
-                <span class="badge badge-info" style="background: #2196f3;">${paper.accuracy}</span>
-              </div>
-              <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                <button class="button-abstract" onclick="toggleAbstract(${paper.id})" style="margin: 0;">
-                  <i class="fas fa-book-open"></i> ABSTRACT
-                </button>
-                <a href="${paper.link}" target="_blank" class="button-abstract" style="background: #4caf50; border-color: #4caf50; margin: 0;">
-                  <i class="fas fa-external-link-alt"></i> VIEW PAPER
-                </a>
-              </div>
-              <div id="abstract-${paper.id}" class="abstract-content" style="display: none; margin-top: 15px; padding: 15px; background: rgba(187, 134, 252, 0.1); border-radius: 8px; border-left: 4px solid #bb86fc;">
-                <p style="text-align: justify; line-height: 1.6;">${paper.abstract}</p>
-                <p style="margin-top: 10px;"><strong>DOI:</strong> <a href="https://doi.org/${paper.doi}" target="_blank" style="color: #bb86fc;">${paper.doi}</a></p>
-              </div>
-            </div>
+      <div class="research-paper-row" data-aos="fade-up" data-aos-delay="${index * 100}" style="
+        background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+        border-radius: 20px;
+        padding: 35px;
+        margin-bottom: 30px;
+        border-left: 5px solid #bb86fc;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      " onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 20px 40px rgba(187, 134, 252, 0.4)'; this.style.borderLeftColor='#6C63FF'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)'; this.style.borderLeftColor='#bb86fc'">
+        
+        <!-- Header Row -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
+          <div style="flex: 1; min-width: 250px;">
+            <!-- Title -->
+            <a href="${paper.link}" target="_blank" style="text-decoration: none;">
+              <h4 style="color: white; font-weight: 700; margin-bottom: 15px; line-height: 1.5; font-size: 1.3rem; transition: color 0.3s;" onmouseover="this.style.color='#bb86fc'" onmouseout="this.style.color='white'">
+                <i class="fas fa-file-alt" style="color: #bb86fc; margin-right: 10px;"></i>${paper.title}
+              </h4>
+            </a>
+            
+            <!-- Authors -->
+            <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 12px; line-height: 1.6;">
+              <i class="fas fa-users" style="color: #bb86fc; margin-right: 8px;"></i>${paper.authors}
+            </p>
+            
+            <!-- Conference -->
+            <p style="color: #999; font-size: 0.85rem; margin-bottom: 15px; font-style: italic;">
+              <i class="fas fa-university" style="color: #6C63FF; margin-right: 8px;"></i>${paper.conference}
+            </p>
           </div>
+          
+          <!-- Right Side - Badges -->
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+            <span style="background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%); color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; white-space: nowrap;">
+              <i class="fas fa-calendar"></i> ${paper.year}
+            </span>
+            <span style="color: #bb86fc; font-size: 0.9rem; font-weight: 600; white-space: nowrap;">
+              <i class="fas fa-building"></i> ${paper.publisher}
+            </span>
+          </div>
+        </div>
+
+        <!-- Metrics Row -->
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+          <span style="background: rgba(187, 134, 252, 0.15); color: #bb86fc; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(187, 134, 252, 0.3); display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fas fa-quote-right"></i> ${paper.citations}
+          </span>
+          <span style="background: rgba(76, 175, 80, 0.15); color: #4caf50; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(76, 175, 80, 0.3); display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fas fa-eye"></i> ${paper.views}
+          </span>
+          <span style="background: rgba(33, 150, 243, 0.15); color: #2196f3; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(33, 150, 243, 0.3); display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fas fa-chart-line"></i> ${paper.accuracy}
+          </span>
+        </div>
+
+        <!-- Buttons Row -->
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <button onclick="toggleAbstract(${paper.id})" style="
+            background: rgba(187, 134, 252, 0.1);
+            color: #bb86fc;
+            border: 2px solid #bb86fc;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="this.style.background='#bb86fc'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='rgba(187, 134, 252, 0.1)'; this.style.color='#bb86fc'; this.style.transform='scale(1)'">
+            <i class="fas fa-book-open"></i> <span id="btn-text-${paper.id}">Show Abstract</span>
+          </button>
+          <a href="${paper.link}" target="_blank" style="
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(76, 175, 80, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            <i class="fas fa-external-link-alt"></i> View Paper
+          </a>
+          <a href="https://doi.org/${paper.doi}" target="_blank" style="
+            background: rgba(255, 255, 255, 0.05);
+            color: #6C63FF;
+            border: 2px solid #6C63FF;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="this.style.background='#6C63FF'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.color='#6C63FF'; this.style.transform='scale(1)'">
+            <i class="fas fa-link"></i> DOI
+          </a>
+        </div>
+
+        <!-- Abstract Content (Hidden by default) -->
+        <div id="abstract-${paper.id}" style="
+          display: none;
+          margin-top: 25px;
+          padding: 25px;
+          background: rgba(187, 134, 252, 0.08);
+          border-radius: 15px;
+          border-left: 4px solid #bb86fc;
+        ">
+          <h6 style="color: #bb86fc; font-weight: 600; margin-bottom: 15px; font-size: 1.05rem;">
+            <i class="fas fa-file-alt"></i> Abstract
+          </h6>
+          <p style="color: #b0b0b0; text-align: justify; line-height: 1.8; font-size: 0.95rem; margin-bottom: 0;">
+            ${paper.abstract}
+          </p>
         </div>
       </div>
     `;
@@ -138,16 +234,14 @@ const showResearchCards = () => {
 // Toggle abstract function
 function toggleAbstract(id) {
   const abstract = document.getElementById(`abstract-${id}`);
-  const icon = document.getElementById(`icon-${id}`);
+  const btnText = document.getElementById(`btn-text-${id}`);
   
-  if (abstract.style.display === "none") {
+  if (abstract.style.display === "none" || abstract.style.display === "") {
     abstract.style.display = "block";
-    icon.classList.remove("fa-chevron-down");
-    icon.classList.add("fa-chevron-up");
+    btnText.textContent = "Hide Abstract";
   } else {
     abstract.style.display = "none";
-    icon.classList.remove("fa-chevron-up");
-    icon.classList.add("fa-chevron-down");
+    btnText.textContent = "Show Abstract";
   }
 }
 

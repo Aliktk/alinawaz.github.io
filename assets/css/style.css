@@ -237,7 +237,7 @@ html {
 .navbar {
   color: #000000;
   background-color: #fff;
-  z-index: 2;
+  z-index: 1000 !important;
   box-shadow: 0 2px 2px rgb(230, 230, 230);
 }
 
