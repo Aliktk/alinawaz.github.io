@@ -13,7 +13,7 @@ const exp = [
   },
   {
     title: "Senior Computer Vision Engineer 🎯",
-    cardImage: "assets/images/experience-page/doaz.png",
+    cardImage: "assets/images/experience-page/doaz_logo.jpg",
     place: "doAZ | Gangnam-gu, Seoul, South Korea (Remote)",
     time: "(Oct 2024 - March 2025)",
     desp: "<li><strong>Sobang 3.0 Government System:</strong> Delivered production-ready blueprint analyzer for South Korean building approvals using SAM2 + YOLOv8 - processing 1000+ drawings daily</li><li><strong>PointChecker RAG System:</strong> Built enterprise document intelligence platform with Llamaparse, GPT-4, Gemini Flash 2.0, Marker, Docling & Cohere Rerank 3.5</li><li>Developed custom Template Matching annotator for blueprint floor dataset creation using Roboflow</li><li>Implemented automatic segmentation, area calculation & floor detection with legal-grade accuracy</li><li>Researched GAN-based background removal + Real-ESRGAN image restoration for blueprint clarity enhancement</li>"

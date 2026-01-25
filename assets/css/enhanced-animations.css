@@ -78,9 +78,24 @@
 }
 
 /* Social icons pulse on hover */
+.socialicon {
+    position: relative;
+}
+
 .socialicon:hover {
-    animation: pulse 1s ease-in-out;
-    filter: brightness(1.3);
+    animation: none !important; /* Override any conflicting animations */
+    filter: brightness(1.2);
+}
+
+.socialicon svg,
+.socialicon i {
+    display: block;
+}
+
+/* Ensure icons don't overflow */
+.social-icons a {
+    overflow: visible;
+    line-height: 1;
 }
 
 /* Smooth scroll indicator */
@@ -287,11 +302,39 @@
     
     .social-icons {
         gap: 10px;
+        max-width: 100%;
+        padding: 10px 5px;
     }
     
     .socialicon {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .socialicon svg {
+        max-width: 36px;
+        max-height: 36px;
+    }
+    
+    .socialicon i {
+        font-size: 1.6rem !important;
+    }
+    
+    .socialicon.scholar i,
+    .socialicon.researchgate i,
+    .socialicon.orcid i {
+        font-size: 1.7rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 8px;
+    }
+    
+    .socialicon {
+        width: 34px;
+        height: 34px;
     }
 }
 
@@ -301,36 +344,87 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     margin-top: 20px;
     padding: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .socialicon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
 .socialicon:hover {
-    transform: translateY(-5px) scale(1.1);
-    opacity: 0.8;
+    transform: translateY(-3px) scale(1.08);
+    opacity: 0.85;
 }
 
 .socialicon svg {
     width: 100%;
     height: 100%;
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
 }
 
 .socialicon i {
     transition: transform 0.3s ease;
+    font-size: 1.8rem !important;
+    line-height: 1;
 }
 
 .socialicon:hover i {
-    transform: scale(1.15);
+    transform: scale(1.1);
+}
+
+/* Specific icon size adjustments */
+.socialicon.twitter svg,
+.socialicon.dribbble svg,
+.socialicon.instagram svg {
+    width: 38px;
+    height: 38px;
+}
+
+.socialicon.linkedin svg {
+    width: 35px;
+    height: 35px;
+}
+
+.socialicon.github svg {
+    width: 38px;
+    height: 38px;
+}
+
+.socialicon.codeforces svg {
+    width: 30px;
+    height: 30px;
+}
+
+.socialicon.upwork svg {
+    width: 32px;
+    height: 32px;
+}
+
+.socialicon.scholar i,
+.socialicon.researchgate i,
+.socialicon.orcid i {
+    font-size: 1.9rem !important;
+}
+
+.socialicon.facebook i {
+    font-size: 1.85rem !important;
+}
+
+.socialicon.kaggle i {
+    font-size: 1.75rem !important;
 }
 
 /* Research Paper Links Styling */
