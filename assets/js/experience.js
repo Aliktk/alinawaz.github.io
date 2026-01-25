@@ -78,6 +78,101 @@ const showCards2 = () => {
 };
 document.addEventListener("DOMContentLoaded", showCards2);
 
+// Awards and Achievements Section
+
+const awardssection = document.querySelector(".awards-section");
+const awards = [
+  {
+    title: "Prime Minister Laptop Scheme Award 🏅",
+    image: "assets/images/Laptop-Scheme.webp",
+    description: "Recognized for ranking in the top ten in Software Engineering at the University of Science and Technology Bannu. This prestigious national award honors academic excellence.",
+  },
+  {
+    title: "Diya Foundation Scholarships 🎓",
+    image: "assets/images/diya scholership.jpg",
+    description: "Awarded for academic merit and financial need during bachelor's studies. Multiple scholarships received for consistent academic performance throughout undergraduate program.",
+  },
+  {
+    title: "Best Student Award ⭐",
+    image: "assets/images/best student.jpg",
+    description: "Honored for excellence in academics and extracurricular activities. Recognized as an outstanding student demonstrating leadership and academic prowess.",
+  },
+  {
+    title: "Fuji Foundation Scholarship 🌟",
+    image: "assets/images/fuji.jpg",
+    description: "Granted to beneficiaries for outstanding performance. Competitive scholarship awarded for exceptional academic achievements and potential.",
+  },
+];
+
+const showAwards = () => {
+  let output = "";
+  awards.forEach(
+    ({ title, image, description }) =>
+      (output += `        
+      <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
+      
+      <img src="${image}" height="250" width="65" class="card-img" style="border-radius:10px">
+      <div class="content">
+          <h2 class="volunteerTitle">${title}</h2><br>
+          <p class="copy">${description}</p></div>
+      
+      </div>
+      `)
+  );
+  awardssection.innerHTML = output;
+};
+document.addEventListener("DOMContentLoaded", showAwards);
+
+// Leadership and Volunteering Section
+
+const leadershipsection = document.querySelector(".leadership-section");
+const leadership = [
+  {
+    title: "AI Seminars Leader 🎤",
+    image: "assets/images/AI Seminars.jpg",
+    description: "Spearheaded sessions at universities on AI, Machine Learning, and Data Science, engaging students and professionals across multiple institutions. Conducted 20+ workshops on emerging AI technologies.",
+  },
+  {
+    title: "Online Tutoring Volunteer 👨‍🏫",
+    image: "assets/images/Online tutor.jpg",
+    description: "Volunteered to mentor underprivileged students in tech education and career development, helping them transition into tech careers. Mentored 100+ students in AI/ML career paths.",
+  },
+  {
+    title: "Community Leadership (550+ Students) 👥",
+    image: "assets/images/kamyab jawan.jpg",
+    description: "Directed a community of 550+ students, organizing workshops and coding sessions for skill enhancement and professional development. Built a thriving tech community.",
+  },
+  {
+    title: "Opti Key Project 🔬",
+    image: "assets/images/optikey.jpg",
+    description: "Revolutionary project for blind persons to utilize technology, making digital interfaces accessible through innovative assistive technology. Transformative impact on accessibility.",
+  },
+  {
+    title: "Bacteria Cell Counter 🧪",
+    image: "assets/images/Bacteria Cell Counter.jpg",
+    description: "Pioneering advancement in assistive technology for biotechnology, automating bacterial cell counting for research labs. Heralding advancements in lab automation.",
+  },
+];
+
+const showLeadership = () => {
+  let output = "";
+  leadership.forEach(
+    ({ title, image, description }) =>
+      (output += `        
+      <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
+      
+      <img src="${image}" height="250" width="65" class="card-img" style="border-radius:10px">
+      <div class="content">
+          <h2 class="volunteerTitle">${title}</h2><br>
+          <p class="copy">${description}</p></div>
+      
+      </div>
+      `)
+  );
+  leadershipsection.innerHTML = output;
+};
+document.addEventListener("DOMContentLoaded", showLeadership);
+
 // Volunteership Cards
 
 const volunteership = document.querySelector(".volunteership");

@@ -130,23 +130,41 @@ Cambridge Model College, Karak, Pakistan
 
 ## 📚 Research Publications
 
-1. **Weakly-Supervised Region Proposals for Chest-Xray Disease Localization and Classification**  
-   *Ali Nawaz, et al.* - IEEE Transactions on Medical Imaging (T-MI), 2023 (Submitted)
+### 📄 Published Papers (6 Publications)
 
-2. **Melanoma Detection Using a Deep Learning Approach**  
-   *Sohail Manzoor, et al.* - International Journal of Innovations in Science & Technology, 2022
+1. **[Inscanner: Dual-Phase Detection and Classification of Auxiliary Insulation Using YOLOv8 Models](https://arxiv.org/abs/2502.18871)** 🔬  
+   *Youngtae Kim, Soonju Jeong, Sardar Arslan, Dhananjay Agnihotri, Yahya Ahmed, **Ali Nawaz**, Jinhee Song, Hyewon Kim*  
+   **ArXiv 2025** | Computer Vision & Pattern Recognition  
+   **Accuracy:** 82% mAP Detection, 98% Classification
 
-3. **Deep Convolutional Neural Network-Based Classification of Alzheimer's Disease Using MRI Data**  
-   *Ali Nawaz, et al.* - IEEE INMIC, 2020
+2. **[Deep Convolutional Neural Network based Classification of Alzheimer's Disease using MRI Data](https://ieeexplore.ieee.org/abstract/document/9318172)** 🧠  
+   ***Ali Nawaz**, Syed Muhammad Anwar, Rehan Liaqat, Javid Iqbal, Ulas Bagci, Muhammad Majid*  
+   **IEEE INMIC 2020** | **Citations: 46+** | **Views: 765+**  
+   **Accuracy:** 99.89% on Alzheimer's Disease classification
 
-4. **Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm**  
-   *Khan, et al.* - MAJICC, 2021
+3. **[Ordinary Learning Method for Heart Disease Detection using Clinical Data](https://ieeexplore.ieee.org/abstract/document/9074056)** ❤️  
+   *Javid Iqbal, Muhmmad Munwar Iqbal, Umair Khadam, **Ali Nawaz***  
+   **IEEE iCoMET 2020** | **Citations: 5+** | **Views: 212+**  
+   **Accuracy:** 98.4615% on UCI Cleveland Heart Disease dataset
 
-5. **Ordinary Learning Method for Heart Disease Detection Using Clinical Data**  
-   *Javid Iqbal, et al.* - iCoMET, 2020
+4. **[Optimized Prediction Model for Type 2 Diabetes Mellitus Using Gradient Boosting Algorithm](https://ieeexplore.ieee.org/abstract/document/9526257)** 🩺  
+   *Akhyar Ali Khan, Huma Qayyum, Rehan Liaqat, Fawad Ahmad, **Ali Nawaz**, Babar Younis*  
+   **IEEE MAJICC 2021** | **Citations: 10+** | **Views: 219+**
 
-6. **Mortality Prediction in ICU Patients Using Machine Learning Models**  
-   *Fawad Ahmad, et al.* - IBCAST, 2021
+5. **[Mortality Prediction in ICU Patients Using Machine Learning Models](https://ieeexplore.ieee.org/abstract/document/9393012)** 🏥  
+   *Fawad Ahmad, Huma Ayub, Rehan Liaqat, Akhyar Ali Khan, **Ali Nawaz**, Babar Younis*  
+   **IEEE IBCAST 2021** | **Citations: 4+** | **Views: 404+**
+
+6. **[Melanoma Detection Using a Deep Learning Approach](https://journal.50sea.com/index.php/IJIST/article/view/191)** 🔬  
+   *Sohail Manzoor, Huma Qayyum, Farman Hassan, Asad Ullah, **Ali Nawaz**, Auliya Ur Rahman*  
+   **IJIST 2022** | **DOI:** 10.33411/ijist/2022040117  
+   **Accuracy:** 92.3%, Precision: 93.3%, Recall: 90%
+
+**📊 Publication Impact:**
+- **Total Publications:** 6
+- **Total Citations:** 65+
+- **Total Views:** 1,600+
+- **Publishers:** IEEE, ArXiv, IJIST
 
 [View All Publications →](https://portfolio.alinawaz.codes/research.html)
 
@@ -202,16 +220,76 @@ Cambridge Model College, Karak, Pakistan
 
 ## 🏆 Achievements & Highlights
 
+### 🎖️ Awards and Achievements
+
+- 🏅 **Prime Minister Laptop Scheme Award** - Recognized for ranking in the **top ten in Software Engineering** at the University of Science and Technology Bannu
+- 🎓 **Diya Foundation Scholarships** - Awarded for academic merit and financial need during bachelor's studies
+- ⭐ **Best Student Award** - Honored for excellence in academics and extracurricular activities
+- 🌟 **Fuji Foundation Scholarship** - Granted to beneficiaries for outstanding performance
+
+### 💼 Professional Achievements
+
 - ✅ **5+ years** of professional AI/ML experience
 - ✅ **15+ production-grade** AI projects delivered
-- ✅ **6+ publications** in IEEE journals and conferences
-- ✅ **Prime Minister Laptop Scheme Award** - Top 10 in Software Engineering
-- ✅ **Best Student Award** - Excellence in academics and extracurricular activities
+- ✅ **6+ publications** in IEEE journals and conferences with **65+ citations** and **1,600+ views**
 - ✅ **60+ FPS** real-time video processing systems
 - ✅ **98%+ accuracy** in ANPR systems
+- ✅ **99.89% accuracy** in Alzheimer's Disease classification (SOTA)
 - ✅ Led projects in **South Korea, USA, and Pakistan**
 - ✅ Expertise in **Gen AI, LLMs, and Computer Vision**
 - ✅ **Research Assistant (TA)** at UET Taxila (2019-2020)
+
+---
+
+## 🤝 Leadership and Volunteering
+
+### 🎤 Community Impact & Leadership
+
+- 🎓 **AI Seminars Leader** - Spearheaded sessions at universities on AI, Machine Learning, and Data Science, engaging students and professionals across multiple institutions
+  
+- 👨‍🏫 **Online Tutoring Volunteer** - Volunteered to mentor underprivileged students in tech education and career development, helping them transition into tech careers
+  
+- 👥 **Community Leadership** - Directed a community of **550+ students**, organizing workshops and coding sessions for skill enhancement and professional development
+  
+- 🔬 **Transformative Projects Leadership:**
+  - **"Opti Key"** - Revolutionary project for blind persons to utilize technology, making digital interfaces accessible through innovative assistive technology
+  - **"Bacteria Cell Counter"** - Pioneering advancement in assistive technology for biotechnology, automating bacterial cell counting for research labs
+
+### 🌍 Social Impact
+
+- Mentored **100+ students** in AI/ML career paths
+- Conducted **20+ workshops** on emerging AI technologies
+- Contributed to **open-source AI projects** for education
+- Advocated for **accessible technology** for persons with disabilities
+
+---
+
+## 📜 Courses and Certifications
+
+### 🎓 Professional Certifications (13 Courses)
+
+**Deep Learning & AI:**
+- 🧠 **Machine and Deep Learning** - DICE Analytics (Dec 2019)
+- 🔥 **Deep Learning using PyTorch** - Udacity (April 2020)
+- 📚 **Deep Learning Specialization** - Coursera (May 2020)
+- 🤖 **Artificial Intelligence [Machine/Deep Learning]** - NAVTTC (March 2020)
+- 🏥 **AI for Medical Diagnosis** - Coursera (May 2020)
+
+**Programming & Development:**
+- 🐍 **Professional Python Programming** - PSEB (August 2020)
+- 📊 **Python for Data Science Chilla** - Codanics (Feb 2022)
+
+**Generative AI & LLMs:**
+- 💬 **ChatGPT Prompt Engineering for Developers** - deeplearning.ai (2023)
+- 🤝 **Pair Programming with Large Language Model** - deeplearning.ai (2023)
+- ⚡ **Finetuning Large Language Models** - deeplearning.ai (2023)
+
+**Business & Professional:**
+- 📋 **SCRUM Product Owner** - PSEB (August 2020)
+- 💼 **National Freelancing Training Program** - MITT (July 2020)
+- 🎨 **E-Rozgaar on Creative Design** - PITB (Sep 2020)
+
+[View All Certifications →](https://portfolio.alinawaz.codes/education.html)
 
 ---
 
