@@ -41,29 +41,6 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://portfolio.alinawaz.codes/" />
     
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ali Nawaz",
-      "jobTitle": "Senior AI/ML Engineer",
-      "url": "https://portfolio.alinawaz.codes/",
-      "image": "https://portfolio.alinawaz.codes/assets/images/my_photo.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/ali-nawaz-khattak/",
-        "https://github.com/Aliktk",
-        "https://twitter.com/engr_ali_nawaz"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "University of Engineering and Technology, Taxila"
-      },
-      "knowsAbout": ["Machine Learning", "Deep Learning", "Computer Vision", "NLP", "PyTorch", "TensorFlow", "Medical Imaging AI", "Generative AI", "LLM", "YOLOv11", "SAM2"],
-      "email": "mailto:nawazktk99@gmail.com",
-      "description": "Senior AI/ML Engineer with 5+ years of experience specializing in Python, Machine Learning, Deep Learning, Computer Vision, NLP, and Generative AI."
-    }
-    </script>
     <!--For Dark/Light mode Toggle-->
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <!--Import Google Icon Font-->
@@ -76,6 +53,7 @@
     <link rel="stylesheet" href="assets/css/enhanced-animations.css">
     <!-- Favicon -->
     <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
     <!-- Font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -92,6 +70,7 @@
 </head>
 
 <body class="no-scroll-preload">
+    
     <!-- loader -->
     <div class="loader-container">
         <div class="atom">
@@ -111,7 +90,7 @@
     </div>
     <center>
         <!-- Home Section -->
-        <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px"></span>&nbsp;, I'm <span class="header">Ali Nawaz</span>
+        <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px" alt="Waving hand"></span>&nbsp;, I'm <span class="header">Ali Nawaz</span>
             <div class="center">
                 <div>
                     <img loading="lazy" src="assets/images/my_photo.jpg" alt="Ali Nawaz - Senior AI Engineer" class="rounded-circle" height="200" width="200">
@@ -123,19 +102,19 @@
                 
                 <!-- Resume Download & Contact Buttons -->
                 <div style="margin-top: 30px; margin-bottom: 20px;">
-                    <a href="Ali_Nawaz_2.0.pdf" download="Ali_Nawaz_Resume.pdf" class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;">
-                        <i class="fas fa-download"></i> Download Resume
+                    <a href="Ali_Nawaz_2.0.pdf" download="Ali_Nawaz_Resume.pdf" class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Download Resume as PDF">
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Resume
                     </a>
-                    <a href="mailto:nawazktk99@gmail.com" class="btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); transition: all 0.3s ease;">
-                        <i class="fas fa-envelope"></i> Hire Me
+                    <a href="mailto:nawazktk99@gmail.com" class="btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Contact Ali Nawaz via email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Hire Me
                     </a>
                 </div>
                 
                 <div>
                     
-                    <div class="social-icons">
+                    <div class="social-icons" role="navigation" aria-label="Social media links">
 
-                        <a class="socialicon linkedin" href="https://www.linkedin.com/in/ali-nawaz-khattak/" target="_blank" rel="author" title="LinkedIn">
+                        <a class="socialicon linkedin" href="https://www.linkedin.com/in/ali-nawaz-khattak/" target="_blank" rel="author noopener" title="LinkedIn" aria-label="Visit Ali Nawaz's LinkedIn profile">
                             <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="#0e76a8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                 <rect x="2" y="9" width="4" height="12"></rect>

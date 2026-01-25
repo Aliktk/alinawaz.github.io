@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" light-mode="dark">
+<head>
+    <title>Blog | Ali Nawaz - AI/ML Insights & Tutorials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="AI blog, machine learning tutorials, computer vision, NLP, deep learning, PyTorch, TensorFlow, AI engineering" />
+    <meta name="description" content="Insights, tutorials, and learnings from an AI/ML Engineer. Explore deep dives into computer vision, NLP, LLMs, and production AI systems." />
+    
+    <!-- Robot.txt -->
+    <meta name="robots" content="index,follow" />
+    <meta name="Googlebot" content="index,follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI/ML Blog | Ali Nawaz">
+    <meta property="og:description" content="Insights and tutorials on AI, Machine Learning, Computer Vision, and NLP">
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="https://portfolio.alinawaz.codes/blog.html">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/cursor.css">
+    <link rel="stylesheet" href="assets/css/enhanced-animations.css">
+    <link id='favicon' rel="icon" href="assets/images/favicon.png" type="image/png">
+    <script defer src="./assets/js/dynamicTitle.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M11CMZ12Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M11CMZ12Q');
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        
+        .blog-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .blog-filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid rgba(187, 134, 252, 0.3);
+            background: rgba(187, 134, 252, 0.1);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%);
+            border-color: #bb86fc;
+            transform: translateY(-2px);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(187, 134, 252, 0.3);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(187, 134, 252, 0.2) 0%, rgba(108, 99, 255, 0.2) 100%);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .blog-category {
+            background: rgba(187, 134, 252, 0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
+            color: #bb86fc;
+            font-weight: 600;
+        }
+        
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #bb86fc;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-read-more:hover {
+            color: #d4a5ff;
+            gap: 12px;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .coming-soon h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .coming-soon p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+        
+        .newsletter-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .newsletter-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-box p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: 2px solid rgba(187, 134, 252, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #bb86fc;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(187, 134, 252, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="no-scroll-preload">
+    <!-- loader -->
+    <div class="loader-container">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron-alpha"></div>
+            <div class="electron-omega"></div>
+        </div>
+    </div>
+
+    <!--Dynamic Nav Bar-->
+    
+    <!-- Blog Hero -->
+    <div class="blog-hero">
+        <h1>📝 AI/ML Insights & Tutorials</h1>
+        <p>Deep dives into Computer Vision, NLP, LLMs, and production AI systems. Learn from real-world projects and cutting-edge research.</p>
+    </div>
+    
+    <!-- Coming Soon Message -->
+    <div class="coming-soon">
+        <h2>🚀 Coming Soon!</h2>
+        <p>I'm currently working on creating valuable content for you. Stay tuned for in-depth tutorials, case studies, and insights from my AI/ML journey.</p>
+        
+        <div class="newsletter-box">
+            <h3>📧 Get Notified</h3>
+            <p>Be the first to know when I publish new articles</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div id="newsletter-message" style="margin-top: 15px; color: #28a745; display: none;"></div>
+        </div>
+    </div>
+    
+    <!-- Upcoming Topics Preview -->
+    <div class="blog-container">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px; font-size: 2rem;">
+            📚 Upcoming Topics
+        </h2>
+        <div class="blog-grid">
+            <!-- Sample upcoming blog cards -->
+            <div class="blog-card" style="opacity: 0.7;">
+                <div class="blog-image" style="display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                    🎯
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Computer Vision</span>
+                        <span><i class="far fa-clock"></i> Coming Soon</span>
+                    </div>
+                    <h3 class="blog-title">Building Production-Ready ANPR Systems with YOLOv11</h3>
+                    <p class="blog-excerpt">A comprehensive guide to building high-performance Automatic Number Plate Recognition systems achieving 98%+ accuracy...</p>
+                </div>
+            </div>
+            
+            <div class="blog-card" style="opacity: 0.7;">
+                <div class="blog-image" style="display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                    🤖
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">LLMs</span>
+                        <span><i class="far fa-clock"></i> Coming Soon</span>
+                    </div>
+                    <h3 class="blog-title">RAG Systems: From Theory to Production</h3>
+                    <p class="blog-excerpt">Learn how to build Retrieval-Augmented Generation systems using LlamaIndex, Langchain, and vector databases...</p>
+                </div>
+            </div>
+            
+            <div class="blog-card" style="opacity: 0.7;">
+                <div class="blog-image" style="display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                    🏥
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Medical AI</span>
+                        <span><i class="far fa-clock"></i> Coming Soon</span>
+                    </div>
+                    <h3 class="blog-title">Pose Estimation for Healthcare Applications</h3>
+                    <p class="blog-excerpt">Deep dive into using ST-GCN and YOLOv11 for real-time healthcare monitoring and compliance verification...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Cursor-->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Dynamic footer section -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    
+    <script>
+        function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            const message = document.getElementById('newsletter-message');
+            
+            // Track in Google Analytics
+            gtag('event', 'newsletter_signup', {
+                'event_category': 'Engagement',
+                'event_label': 'Blog Newsletter',
+                'value': 1
+            });
+            
+            // Show success message
+            message.textContent = '✅ Thanks! You\'ll be notified when new content is published.';
+            message.style.display = 'block';
+            
+            // Reset form
+            event.target.reset();
+            
+            // You can integrate with email service like Mailchimp, ConvertKit, etc.
+            // fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+        }
+    </script>
+</body>
+</html>
+

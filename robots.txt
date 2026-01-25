@@ -2,3 +2,19 @@ User-agent: *
 Allow: /
 
 Sitemap: https://portfolio.alinawaz.codes/sitemap.xml
+
+# Disallow admin or private areas
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /index.html
+Allow: /projects.html
+Allow: /blog.html
+
+# Allow CSS and JS for better rendering
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1
