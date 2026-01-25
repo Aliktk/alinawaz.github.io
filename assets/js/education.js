@@ -146,7 +146,7 @@ const showCards = () => {
             <div class="card mb-3 mx-auto">
                <div class="content">
                   <div class="content-overlay"></div>
-                    <img src=${cardImage} class="card-img-top content-image" style="width: 100%; height: 150px; object-fit: contain; padding: 10px; background: white;">     
+                    <img loading="lazy" src=${cardImage} class="card-img-top content-image" style="width: 100%; height: 150px; object-fit: contain; padding: 10px; background: white;">     
                   <div class="content-details fadeIn-bottom">
                     ${moocLink !== '#' ? `<a href="${moocLink}" target="_blank"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>` : ''}                                   
                   </div>

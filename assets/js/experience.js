@@ -55,7 +55,7 @@ const showCards2 = () => {
       (output += `        
     <div class="col gaap" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="400"> 
       <div class="card card1">
-        <img src="${cardImage}" class="featured-image" style="width: 100%; height: 200px; object-fit: contain; padding: 10px; background: white;"/>
+        <img loading="lazy" src="${cardImage}" class="featured-image" style="width: 100%; height: 200px; object-fit: contain; padding: 10px; background: white;"/>
         <article class="card-body">
           <header>
             <div class="title">
@@ -111,7 +111,7 @@ const showAwards = () => {
       (output += `        
       <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
       
-      <img src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
+      <img loading="lazy" src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
       <div class="content">
           <h2 class="volunteerTitle">${title}</h2><br>
           <p class="copy">${description}</p></div>
@@ -161,7 +161,7 @@ const showLeadership = () => {
       (output += `        
       <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
       
-      <img src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
+      <img loading="lazy" src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
       <div class="content">
           <h2 class="volunteerTitle">${title}</h2><br>
           <p class="copy">${description}</p></div>
