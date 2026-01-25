@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: "AutoScanX - Real-Time ANPR System",
-    cardImage: "assets/images/project-page/autoscanx.png",
+    cardImage: "assets/images/project-page/anpr.jpg",
     description: "🚗 High-performance ANPR system processing multi-lane traffic at 60+ FPS. Leverages PaddleOCR + OpenCV for IR camera feeds with advanced preprocessing. Handles moving vehicles, varying angles & weather conditions with 98%+ accuracy.",
     tagimg: "https://img.icons8.com/color/96/opencv.png",
     Previewlink: "",
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: "PointChecker - LLM Document Intelligence",
-    cardImage: "assets/images/project-page/pointchecker.png",
+    cardImage: "assets/images/pointchecker.png",
     description: "📄 Enterprise RAG system with multi-modal document processing. Integrates Llamaparse, OpenAI GPT-4, Gemini Flash 2.0, Marker, Docling & Cohere Rerank 3.5. Automated citation extraction, semantic search & structured data extraction. Legal-grade accuracy.",
     tagimg: "https://img.icons8.com/color/96/chatgpt.png",
     Previewlink: "https://www.pointchecker.ai/",
@@ -58,7 +58,7 @@ const projects = [
     cardImage: "assets/images/project-page/chest-xray.png",
     description: "🔬 Novel weakly-supervised deep learning framework for multi-disease detection in chest X-rays. Trained on MIMIC-CXR + VinDr-PCXR datasets. Region proposal networks achieve SOTA localization without pixel-level annotations. Published in IEEE T-MI (2023).",
     tagimg: "https://img.icons8.com/color/96/pytorch.png",
-    Previewlink: "",
+    Previewlink: "https://xylexa.ai/xycad-cxr/",
     Githublink: "",
   },
   {
@@ -79,31 +79,15 @@ const projects = [
   },
   {
     title: "Print Media Intelligence Scraper",
-    cardImage: "assets/images/project-page/scrap.png",
+    cardImage: "assets/images/project-page/print media scrapper.jpg",
     description: "📰 Distributed web scraping system for 50+ news sources (local & international). Features: anti-bot detection bypass, Elasticsearch indexing, e-newspaper PDF analysis, automated scheduling & data deduplication. Processes 10,000+ articles daily.",
     tagimg: "https://img.icons8.com/color/96/python.png",
     Previewlink: "https://github.com/Aliktk/print_media_scrappers",
     Githublink: "https://github.com/Aliktk/print_media_scrappers",
   },
   {
-    title: "Rice Disease AI - Agricultural Computer Vision",
-    cardImage: "assets/images/project-page/rice.jpg",
-    description: "🌾 Hybrid CNN transfer learning for rice plant pathology. Identifies 10+ disease types with 90.8% accuracy. Mobile-deployable model for field diagnostics. Data augmentation & ensemble learning. Supports farmers with early disease detection.",
-    tagimg: "https://img.icons8.com/color/96/tensorflow.png",
-    Previewlink: "",
-    Githublink: "https://github.com/Aliktk/Rice-Disease-Classfication",
-  },
-  {
-    title: "Brain Tumor Detection - Medical Imaging AI",
-    cardImage: "assets/images/project-page/brain.jpg",
-    description: "🧠 Deep learning system for brain MRI tumor detection & classification. 2D CNN architecture with extensive augmentation. Classifies 4 tumor types + healthy cases. Grad-CAM visualization for interpretability. Clinical validation ready.",
-    tagimg: "https://img.icons8.com/color/96/pytorch.png",
-    Previewlink: "",
-    Githublink: "https://github.com/Aliktk/Brain_Tumor_Classfication_Using_DL",
-  },
-  {
     title: "Bird Species Recognition - Wildlife AI",
-    cardImage: "assets/images/project-page/bird.png",
+    cardImage: "assets/images/project-page/bird voice.png",
     description: "🦅 Multi-modal bird classification system using Faster R-CNN, ResNet50 & VGG19. Trained on Xeno-Canto audio-visual dataset. Recognizes 55 species with audio+visual fusion. Real-time detection for wildlife conservation & biodiversity monitoring.",
     tagimg: "https://img.icons8.com/color/96/pytorch.png",
     Previewlink: "",
@@ -111,7 +95,7 @@ const projects = [
   },
   {
     title: "Image Forgery Detection - Digital Forensics",
-    cardImage: "assets/images/project-page/forgery.png",
+    cardImage: "assets/images/project-page/image forgery.png",
     description: "🔍 Advanced forensic system detecting copy-move manipulations. Implements SIFT, SURF, IHC & AKAZE feature extraction. Identifies cloned regions, rotation, scaling & JPEG compression. High precision for legal & media verification applications.",
     tagimg: "https://img.icons8.com/color/96/opencv.png",
     Previewlink: "",
@@ -119,7 +103,7 @@ const projects = [
   },
   {
     title: "Alzheimer's Detection - Neuroimaging AI",
-    cardImage: "assets/images/project-page/alzheimer.png",
+    cardImage: "assets/images/project-page/alzheimer.jpg",
     description: "🧬 Deep CNN for Alzheimer's early detection using brain MRI. Multi-stage classification (Normal/MCI/AD). 2D & 3D imaging analysis with spatial-temporal features. Master's thesis project - Published IEEE INMIC 2020. Clinical collaboration validated.",
     tagimg: "https://img.icons8.com/color/96/tensorflow.png",
     Previewlink: "",
