@@ -47,6 +47,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/research-cards.css" /> -->
     <link rel="stylesheet" href="assets/css/cursor.css">
     <link rel="stylesheet" href="assets/css/enhanced-animations.css">
+    <link rel="stylesheet" href="assets/css/micro-interactions.css">
     <link id='favicon' rel="icon" href="assets/images/favicon.png" type="image/png">
     <!--Favicon-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -63,6 +64,10 @@
 </head>
 
 <body class="no-scroll-preload">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.1); z-index: 9999;">
+        <div class="scroll-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #bb86fc 0%, #00F5A0 100%); transition: width 0.1s ease;"></div>
+    </div>
 
     <!-- loader -->
     <div class="loader-container">
@@ -380,6 +385,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="assets/js/cursor.js"></script>
     <script src="assets/js/research.js"></script>
+    
+    <script>
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
+        });
+    </script>
 
 </body>
 

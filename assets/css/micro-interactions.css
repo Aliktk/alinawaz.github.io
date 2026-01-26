@@ -1,0 +1,362 @@
+/* ===========================================
+   MICRO-INTERACTIONS & ENHANCED ANIMATIONS
+   =========================================== */
+
+/* Button Hover Effects */
+.btn, button, a.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover, button:hover, a.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.5) !important;
+}
+
+.btn:active, button:active, a.btn:active {
+    transform: translateY(0);
+}
+
+/* Ripple Effect on Click */
+.btn::after, button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after, button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Social Icon Animations */
+.socialicon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socialicon:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.socialicon svg {
+    transition: all 0.3s ease;
+}
+
+.socialicon:hover svg {
+    filter: drop-shadow(0 5px 10px rgba(187, 134, 252, 0.5));
+}
+
+/* Card Hover Effects */
+.core-skill-card, .badge-card, .project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.core-skill-card:hover, .badge-card:hover, .project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Nav Link Underline Animation */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #bb86fc 0%, #00F5A0 100%);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after, .nav-link.current-link::after {
+    width: 80%;
+}
+
+/* Image Zoom on Hover */
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Skill Badge Hover */
+.tech-badge, [style*="background: rgba(187, 134, 252"] {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(187, 134, 252, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.4);
+}
+
+/* Floating Animation for Icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation for Availability Badge */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        border-color: #00F5A0;
+        box-shadow: 0 0 0 0 rgba(0, 245, 160, 0.4);
+    }
+    50% {
+        border-color: #00F5A0;
+        box-shadow: 0 0 0 6px rgba(0, 245, 160, 0);
+    }
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #bb86fc, #00F5A0, #bb86fc);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Loading Skeleton Screens */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+[light-mode="dark"] .skeleton {
+    background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+    background-size: 200% 100%;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 10px;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+}
+
+/* Fade In on Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tooltip Hover */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    padding: 8px 12px;
+    background: #333;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Enhanced Focus States for Accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid #bb86fc;
+    outline-offset: 2px;
+}
+
+/* Smooth Page Transitions */
+body {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Touch Feedback */
+@media (hover: none) {
+    .btn:active, button:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Responsive Touch Targets */
+@media (max-width: 768px) {
+    .btn, button, a.btn, .nav-link {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    .socialicon {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile-optimized availability badge */
+    .availability-badge {
+        font-size: 0.85rem !important;
+        padding: 6px 16px !important;
+        margin: 15px auto !important;
+        max-width: 90% !important;
+    }
+    
+    .availability-badge span:last-child {
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Mobile scroll progress bar - slightly thicker */
+    .scroll-progress-container {
+        height: 5px !important;
+    }
+    
+    /* Better spacing on mobile */
+    .core-skill-card, .badge-card, .project-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Optimized social icons grid */
+    .social-icons {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    /* Larger touch targets for small screens */
+    .btn, button {
+        min-width: 48px;
+        min-height: 48px;
+        font-size: 0.95rem;
+    }
+    
+    /* Stack buttons vertically */
+    .availability-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+

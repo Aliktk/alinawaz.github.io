@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/enhanced-animations.css">
+    <link rel="stylesheet" href="assets/css/micro-interactions.css">
     <!-- Favicon -->
     <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
     <link rel="apple-touch-icon" href="assets/images/icon-192.png">
@@ -71,6 +72,11 @@
 
 <body class="no-scroll-preload">
     
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.1); z-index: 9999;">
+        <div class="scroll-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #bb86fc 0%, #00F5A0 100%); transition: width 0.1s ease;"></div>
+    </div>
+    
     <!-- loader -->
     <div class="loader-container">
         <div class="atom">
@@ -90,24 +96,43 @@
     </div>
     <center>
         <!-- Home Section -->
-        <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px" alt="Waving hand"></span>&nbsp;, I'm <span class="header">Ali Nawaz</span>
+        <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img loading="lazy" src="assets/images/Hand.gif" width="35px" alt="Waving hand"></span>&nbsp;, I'm <span class="header">Ali Nawaz</span>
             <div class="center">
                 <div>
                     <img loading="lazy" src="assets/images/my_photo.jpg" alt="Ali Nawaz - Senior AI Engineer" class="rounded-circle" height="200" width="200">
                 </div>
                 <br/>
-                <span style="display: inline;"><strong>Senior AI/ML Engineer</strong> specializing in <span class="animated-text"
-                    data-words="PyTorch & TensorFlow, Computer Vision, Medical Imaging AI, NLP & LLMs, Generative AI, Agentic AI, YOLOv11 & SAM2, Azure OpenAI, Real-time Systems"></span>
-                </span>
+                <div style="display: inline-block; max-width: 90%; text-align: center;">
+                    <span style="display: inline; white-space: nowrap;"><strong>Senior AI/ML Engineer</strong> specializing in <span class="animated-text"
+                        data-words="PyTorch & TensorFlow, Computer Vision, Medical Imaging AI, NLP & LLMs, Generative AI, Agentic AI, Azure OpenAI, Real-time Systems"></span>
+                    </span>
+                </div>
+                
+                <style>
+                    @keyframes pulse {
+                        0%, 100% { opacity: 1; transform: scale(1); }
+                        50% { opacity: 0.5; transform: scale(1.1); }
+                    }
+                    @keyframes pulse-border {
+                        0%, 100% { border-color: #00F5A0; box-shadow: 0 0 0 0 rgba(0, 245, 160, 0.4); }
+                        50% { border-color: #00F5A0; box-shadow: 0 0 0 6px rgba(0, 245, 160, 0); }
+                    }
+                </style>
                 
                 <!-- Resume Download & Contact Buttons -->
-                <div style="margin-top: 30px; margin-bottom: 20px;">
-                    <a href="Ali_Nawaz_2.0.pdf" download="Ali_Nawaz_Resume.pdf" class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Download Resume as PDF">
+                <div style="margin-top: 30px; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
+                    <a href="Ali_Nawaz_2.0.pdf" download="Ali_Nawaz_Resume.pdf" class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Download Resume as PDF">
                         <i class="fas fa-download" aria-hidden="true"></i> Download Resume
                     </a>
-                    <a href="mailto:nawazktk99@gmail.com" class="btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 10px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Contact Ali Nawaz via email">
+                    <a href="mailto:nawazktk99@gmail.com" class="btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); transition: all 0.3s ease; min-width: 44px; min-height: 44px;" aria-label="Contact Ali Nawaz via email">
                         <i class="fas fa-envelope" aria-hidden="true"></i> Hire Me
                     </a>
+                    
+                    <!-- Availability Badge -->
+                    <div class="availability-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 245, 160, 0.1); border: 2px solid #00F5A0; padding: 10px 20px; border-radius: 50px; animation: pulse-border 2s infinite;">
+                        <span class="pulse-dot" style="width: 10px; height: 10px; background: #00F5A0; border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite;"></span>
+                        <span style="color: #00F5A0; font-weight: 600; font-size: 0.95rem; white-space: nowrap;">Available for Freelance Work</span>
+                    </div>
                 </div>
                 
                 <div>
@@ -372,29 +397,29 @@
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem; font-weight: 700;">🏆 Achievements & Recognition</h2>
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">🎓</div>
+                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="font-size: 3rem; margin-bottom: 15px; transition: transform 0.3s;" onmouseover="this.parentElement.querySelector('div').style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.parentElement.querySelector('div').style.transform='scale(1) rotate(0deg)'">🎓</div>
                         <h3 style="font-size: 2rem; color: #667eea; margin-bottom: 5px;">M.Sc</h3>
                         <p style="color: #666; margin: 0;">Software Engineering</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">📚</div>
+                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="font-size: 3rem; margin-bottom: 15px; transition: transform 0.3s;" onmouseover="this.parentElement.querySelector('div').style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.parentElement.querySelector('div').style.transform='scale(1) rotate(0deg)'">📚</div>
                         <h3 style="font-size: 2rem; color: #667eea; margin-bottom: 5px;">6 Papers</h3>
                         <p style="color: #666; margin: 0;">IEEE & arXiv Published</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">💼</div>
+                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="font-size: 3rem; margin-bottom: 15px; transition: transform 0.3s;" onmouseover="this.parentElement.querySelector('div').style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.parentElement.querySelector('div').style.transform='scale(1) rotate(0deg)'">💼</div>
                         <h3 style="font-size: 2rem; color: #667eea; margin-bottom: 5px;">5+ Years</h3>
                         <p style="color: #666; margin: 0;">Professional Experience</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                        <div style="font-size: 3rem; margin-bottom: 15px;">🚀</div>
+                    <div class="badge-card" style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="font-size: 3rem; margin-bottom: 15px; transition: transform 0.3s;" onmouseover="this.parentElement.querySelector('div').style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.parentElement.querySelector('div').style.transform='scale(1) rotate(0deg)'">🚀</div>
                         <h3 style="font-size: 2rem; color: #667eea; margin-bottom: 5px;">15+</h3>
                         <p style="color: #666; margin: 0;">AI/ML Projects</p>
                     </div>
@@ -442,9 +467,9 @@
             <div class="row">
                 <!-- R34L AI Platform - First -->
                 <div class="col-md-4 mb-4">
-                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; min-height: 560px; display: flex; flex-direction: column;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <span style="font-size: 4rem;">🤖</span>
+                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); min-height: 560px; display: flex; flex-direction: column; cursor: pointer;" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(187, 134, 252, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="height: 200px; background: linear-gradient(135deg, #bb86fc 0%, #6C63FF 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s;">
+                            <span style="font-size: 4rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'">🤖</span>
                         </div>
                         <div style="padding: 25px; flex: 1; display: flex; flex-direction: column;">
                             <h3 style="font-size: 1.5rem; margin-bottom: 15px; min-height: 3.5rem; color: #bb86fc; font-weight: 700;">R34L AI Platform (L34H & 4UR4)</h3>
@@ -455,15 +480,15 @@
                                 <li>Self-healing infrastructure automation</li>
                                 <li>Real-time system monitoring & alerts</li>
                             </ul>
-                            <a href="https://real-platform-staging.invo.zone/" target="_blank" style="color: #bb86fc; text-decoration: none; font-weight: 600; margin-top: auto;">Visit Platform →</a>
+                            <a href="https://real-platform-staging.invo.zone/" target="_blank" style="color: #bb86fc; text-decoration: none; font-weight: 600; margin-top: auto; transition: all 0.3s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">Visit Platform →</a>
                         </div>
                     </div>
                 </div>
                 <!-- Mynatek Hospital System - Second -->
                 <div class="col-md-4 mb-4">
-                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; min-height: 560px; display: flex; flex-direction: column;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <span style="font-size: 4rem;">🏥</span>
+                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); min-height: 560px; display: flex; flex-direction: column; cursor: pointer;" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s;">
+                            <span style="font-size: 4rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'">🏥</span>
                         </div>
                         <div style="padding: 25px; flex: 1; display: flex; flex-direction: column;">
                             <h3 style="font-size: 1.5rem; margin-bottom: 15px; min-height: 3.5rem; color: #667eea; font-weight: 700;">Mynatek Hospital System</h3>
@@ -474,15 +499,15 @@
                                 <li>Real-time video stream processing</li>
                                 <li>Compliance reporting & analytics dashboard</li>
                             </ul>
-                            <a href="https://mynatek.com/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600; margin-top: auto;">Visit Website →</a>
+                            <a href="https://mynatek.com/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600; margin-top: auto; transition: all 0.3s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">Visit Website →</a>
                         </div>
                     </div>
                 </div>
                 <!-- XyCAD Medical Imaging - Third -->
                 <div class="col-md-4 mb-4">
-                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; min-height: 560px; display: flex; flex-direction: column;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <span style="font-size: 4rem;">🩺</span>
+                    <div class="project-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); min-height: 560px; display: flex; flex-direction: column; cursor: pointer;" onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(245, 87, 108, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'">
+                        <div style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s;">
+                            <span style="font-size: 4rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'">🩺</span>
                         </div>
                         <div style="padding: 25px; flex: 1; display: flex; flex-direction: column;">
                             <h3 style="font-size: 1.5rem; margin-bottom: 15px; min-height: 3.5rem; color: #f5576c; font-weight: 700;">XyCAD Medical Imaging</h3>
@@ -493,7 +518,7 @@
                                 <li>DICOM image processing & visualization</li>
                                 <li>Clinical-grade accuracy & FDA pathway</li>
                             </ul>
-                            <a href="https://xylexa.ai/" target="_blank" style="color: #f5576c; text-decoration: none; font-weight: 600; margin-top: auto;">Visit Website →</a>
+                            <a href="https://xylexa.ai/" target="_blank" style="color: #f5576c; text-decoration: none; font-weight: 600; margin-top: auto; transition: all 0.3s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">Visit Website →</a>
                         </div>
                     </div>
                 </div>
@@ -664,6 +689,12 @@
                     'event_label': 'Resume Download'
                 });
             });
+        });
+        
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
         });
     </script>
 
