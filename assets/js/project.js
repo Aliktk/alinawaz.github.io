@@ -113,6 +113,22 @@ const projects = [
 
 // function for rendering project cards data
 const showCards = () => {
+  /* ============================================
+     SKELETON LOADING IMPLEMENTATION (Optional)
+     ============================================
+     
+     To show skeleton while projects load:
+     
+     1. Show skeleton at start:
+        document.getElementById('projectSkeleton').classList.add('active');
+        document.getElementById('projectContent').style.display = 'none';
+     
+     2. Hide skeleton after projects load:
+        document.getElementById('projectSkeleton').classList.remove('active');
+        document.getElementById('projectContent').style.display = 'block';
+     
+     ============================================ */
+  
   let output = "";
   projects.forEach(({ title, cardImage, Previewlink, Githublink }) => {
     // Encode the image path to handle spaces and special characters

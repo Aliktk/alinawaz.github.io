@@ -60,6 +60,72 @@
 
       gtag('config', 'G-M11CMZ12Q');
     </script>
+    
+    <style>
+        /* Skeleton Loading Styles for Projects */
+        .skeleton-project-container {
+            display: none; /* Hidden by default, show with JS when loading */
+        }
+        
+        .skeleton-project-container.active {
+            display: block;
+        }
+        
+        .skeleton-project-card {
+            margin: 15px;
+            height: 400px;
+            background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .skeleton-project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .skeleton-project-content {
+            padding: 20px;
+        }
+        
+        .skeleton-project-title {
+            width: 70%;
+            height: 24px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .skeleton-project-text {
+            width: 100%;
+            height: 16px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .skeleton-project-text:last-child {
+            width: 60%;
+        }
+        
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
 </head>
 
 <body class="no-scroll-preload">
@@ -313,7 +379,91 @@
         </section>
     </div>
 
-    <div class="project-box" style="padding: 20px;">
+    <!-- Skeleton Loading (for future dynamic content) -->
+    <!-- To use: Add class "active" to skeleton-project-container -->
+    <div class="project-box skeleton-project-container" id="projectSkeleton" style="padding: 20px;">
+        <div class="row">
+            <!-- Skeleton Card 1 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 2 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 3 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 4 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 5 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 6 -->
+            <div class="col-md-4">
+                <div class="skeleton-project-card">
+                    <div class="skeleton-project-image"></div>
+                    <div class="skeleton-project-content">
+                        <div class="skeleton-project-title"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                        <div class="skeleton-project-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-box" style="padding: 20px;" id="projectContent">
         <div class="row page-content projectcards">
             <!-- Dynamic project card -->
         </div>

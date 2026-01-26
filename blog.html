@@ -252,6 +252,77 @@
             box-shadow: 0 10px 25px rgba(187, 134, 252, 0.4);
         }
         
+        /* Skeleton Loading Styles */
+        .skeleton-container {
+            display: none; /* Hidden by default, show with JS when loading */
+        }
+        
+        .skeleton-container.active {
+            display: block;
+        }
+        
+        .skeleton-blog-card {
+            background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skeleton-blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .skeleton-blog-content {
+            padding: 20px;
+        }
+        
+        .skeleton-category {
+            width: 120px;
+            height: 20px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .skeleton-title {
+            width: 80%;
+            height: 24px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .skeleton-text {
+            width: 100%;
+            height: 16px;
+            background: linear-gradient(90deg, #2a2a3e 25%, #1e1e2e 50%, #2a2a3e 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .skeleton-text:last-child {
+            width: 70%;
+        }
+        
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .blog-hero h1 {
                 font-size: 2rem;
@@ -312,8 +383,53 @@
         </div>
     </div>
     
+    <!-- Skeleton Loading (for future dynamic content) -->
+    <!-- To use: Add class "active" to skeleton-container and hide blog-grid -->
+    <div class="blog-container skeleton-container" id="blogSkeleton">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px; font-size: 2rem;">
+            📚 Loading Articles...
+        </h2>
+        <div class="blog-grid">
+            <!-- Skeleton Card 1 -->
+            <div class="skeleton-blog-card">
+                <div class="skeleton-blog-image"></div>
+                <div class="skeleton-blog-content">
+                    <div class="skeleton-category"></div>
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 2 -->
+            <div class="skeleton-blog-card">
+                <div class="skeleton-blog-image"></div>
+                <div class="skeleton-blog-content">
+                    <div class="skeleton-category"></div>
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                </div>
+            </div>
+            
+            <!-- Skeleton Card 3 -->
+            <div class="skeleton-blog-card">
+                <div class="skeleton-blog-image"></div>
+                <div class="skeleton-blog-content">
+                    <div class="skeleton-category"></div>
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Upcoming Topics Preview -->
-    <div class="blog-container">
+    <div class="blog-container" id="blogContent">
         <h2 style="text-align: center; color: white; margin-bottom: 40px; font-size: 2rem;">
             📚 Upcoming Topics
         </h2>
@@ -375,6 +491,42 @@
     <script src="assets/js/cursor.js"></script>
     
     <script>
+        /* ============================================
+           SKELETON LOADING IMPLEMENTATION GUIDE
+           ============================================
+           
+           When you add dynamic content loading, use this code:
+           
+           Example Usage:
+           --------------
+           
+           // 1. Show skeleton while loading
+           function loadBlogPosts() {
+               const skeleton = document.getElementById('blogSkeleton');
+               const content = document.getElementById('blogContent');
+               
+               // Show skeleton, hide content
+               skeleton.classList.add('active');
+               content.style.display = 'none';
+               
+               // Fetch your blog posts
+               fetch('your-api-endpoint')
+                   .then(response => response.json())
+                   .then(data => {
+                       // Populate content
+                       content.innerHTML = generateBlogCards(data);
+                       
+                       // Hide skeleton, show content
+                       skeleton.classList.remove('active');
+                       content.style.display = 'block';
+                   });
+           }
+           
+           // 2. Call on page load (when you have dynamic content)
+           // window.addEventListener('load', loadBlogPosts);
+           
+           ============================================ */
+        
         // Track newsletter signup
         const newsletterForm = document.querySelector('.newsletter-form');
         if (newsletterForm) {
