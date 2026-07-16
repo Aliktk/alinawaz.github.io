@@ -5,6 +5,21 @@ const researchSection = document.querySelector(".research-papers-container");
 
 const researchPapers = [
   {
+    id: 7,
+    title: "Weakly-Supervised Region Proposals for Chest-Xray Disease Localization and Classification",
+    authors: "Ali Nawaz, Syed Muhammad Anwar, Javed Ali Khan",
+    conference: "IEEE Transactions on Medical Imaging (T-MI)",
+    year: 2023,
+    image: "assets/images/research-page/semanticSegmentation.png",
+    abstract: "This work proposes a weakly-supervised deep learning framework for localizing and classifying multiple thoracic diseases in chest X-rays using only image-level labels, avoiding the need for costly pixel- or bounding-box-level annotations. Region proposals are generated to highlight disease-relevant regions and are jointly optimized with a multi-label classification objective, enabling the model to both predict the presence of pathologies and indicate their approximate location. The approach is developed and evaluated on large-scale public chest X-ray datasets, with the goal of improving interpretability and clinical trust in automated diagnostic systems.",
+    doi: "",
+    link: "https://scholar.google.com.pk/citations?hl=en&user=oFzPPSMAAAAJ",
+    publisher: "IEEE (Under Review)",
+    citations: "Under Review",
+    views: "Submitted 2023",
+    accuracy: "Weakly-Supervised Localization"
+  },
+  {
     id: 1,
     title: "Inscanner: Dual-Phase Detection and Classification of Auxiliary Insulation Using YOLOv8 Models",
     authors: "Youngtae Kim, Soonju Jeong, Sardar Arslan, Dhananjay Agnihotri, Yahya Ahmed, Ali Nawaz, Jinhee Song, Hyewon Kim",
@@ -99,6 +114,27 @@ const researchPapers = [
 const showResearchCards = () => {
   let output = "";
   researchPapers.forEach((paper, index) => {
+    // Only render the DOI button when the paper actually has a DOI
+    // (submitted / under-review papers won't).
+    const doiButton = paper.doi
+      ? `<a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" style="
+            background: rgba(255, 255, 255, 0.05);
+            color: #6C63FF;
+            border: 2px solid #6C63FF;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="this.style.background='#6C63FF'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.color='#6C63FF'; this.style.transform='scale(1)'">
+            <i class="fas fa-link"></i> DOI
+          </a>`
+      : "";
     output += `
       <div class="research-paper-row" data-aos="fade-up" data-aos-delay="${index * 100}" style="
         background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
@@ -190,23 +226,7 @@ const showResearchCards = () => {
           " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(76, 175, 80, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
             <i class="fas fa-external-link-alt"></i> View Paper
           </a>
-          <a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" style="
-            background: rgba(255, 255, 255, 0.05);
-            color: #6C63FF;
-            border: 2px solid #6C63FF;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-          " onmouseover="this.style.background='#6C63FF'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.color='#6C63FF'; this.style.transform='scale(1)'">
-            <i class="fas fa-link"></i> DOI
-          </a>
+          ${doiButton}
         </div>
 
         <!-- Abstract Content (Hidden by default) -->
