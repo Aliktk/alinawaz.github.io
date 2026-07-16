@@ -46,6 +46,20 @@ const exp = [
     time: "(March 2019 - July 2020)",
     desp: "<li>Pioneered AI research at SIMPLE Lab focusing on brain MRI analysis for neurodegenerative diseases</li><li>Developed deep learning frameworks for Alzheimer's Disease early detection using 2D & 3D MRI imaging</li><li>Published research in IEEE INMIC 2020 on CNN-based Alzheimer's classification</li><li>Specialized in medical image preprocessing, feature extraction & spatial-temporal analysis techniques</li><li>Explored innovative neuroimaging technologies & their integration with state-of-the-art AI architectures</li><li>Mentored undergraduate students in machine learning & computer vision coursework</li>"
   },
+  {
+    title: "ICT Instructor & NIP Intern 👨‍🏫",
+    cardImage: "https://img.icons8.com/color/96/training.png",
+    place: "Cambridge Model College | Karak, KPK (National Internship Program)",
+    time: "(March 2017 - March 2018)",
+    desp: "<li>Participated in the National Internship Program (NIP) in collaboration with the KPK IT Board, Peshawar, contributing to software industry projects</li><li>Served as Senior ICT Instructor, teaching computer science and overseeing the computer labs at Cambridge Model College, Karak</li><li>Mentored students in fundamental programming and IT skills</li>"
+  },
+  {
+    title: "Graphic Design Intern - KP IT Board 🎨",
+    cardImage: "https://img.icons8.com/color/96/design.png",
+    place: "DYNIMAX Intermedia | Islamabad, Pakistan",
+    time: "(Jan 2017 - June 2017)",
+    desp: "<li>Selected for the competitive KP IT Board Internship Program</li><li>Gained hands-on mastery of graphic design tools: Photoshop, Illustrator, Corel Draw, Sony Vegas & Canva</li><li>Built practical skills in graphic design, video editing, photography and 2D/3D animation</li>"
+  },
 ];
 
 const showCards2 = () => {
