@@ -1,9 +1,18 @@
 /* ---- particles.js config ---- */
 
+// Scale the particle system to the device: fewer particles on small screens and
+// honour prefers-reduced-motion so we don't burn CPU/GPU on mobile or for users
+// who opt out of animation.
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+const isSmallScreen = window.innerWidth < 768;
+const particleCount = prefersReducedMotion ? 0 : isSmallScreen ? 40 : 140;
+
 particlesJS("particles-js", {
   particles: {
     number: {
-      value: 140,
+      value: particleCount,
       density: {
         enable: true,
         value_area: 800,
@@ -49,7 +58,7 @@ particlesJS("particles-js", {
       },
     },
     line_linked: {
-      enable: true,
+      enable: !isSmallScreen,
       distance: 150,
       color: "#808080",
       opacity: 0.4,
@@ -92,7 +101,7 @@ particlesJS("particles-js", {
       },
     },
   },
-  retina_detect: true,
+  retina_detect: !isSmallScreen,
 });
 const allElements = document.querySelectorAll(".animated-text");
 
@@ -101,8 +110,12 @@ if (allElements.length > 0) {
   //It runs the script for each found element
   allElements.forEach((element) => {
     const txtElement = element,
-      wordsList = txtElement.getAttribute("data-words"),
-      words = wordsList.split(", "); // It makes an array of words from data attribute
+      wordsList = txtElement.getAttribute("data-words");
+
+    // Skip elements that don't declare any words to type.
+    if (!wordsList) return;
+
+    const words = wordsList.split(", "); // It makes an array of words from data attribute
 
     let wordsCount = 0;
 
