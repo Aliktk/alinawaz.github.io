@@ -156,26 +156,17 @@ const showCards = () => {
 };
 document.addEventListener("DOMContentLoaded", showCards);
 
+// Filters the project cards by title. Wire up to a search box with id="myInput".
 function myFunction() {
-  // Declare variables
-  var input, button, i, skillcard, card, title;
-  input = document.getElementById("myInput").value;
-  input = input.toUpperCase();
-  skillcard = document.getElementsByClassName("skill-card");
-  card = document.getElementsByClassName("card");
-  title = document.getElementsByClassName("title");
+  const inputEl = document.getElementById("myInput");
+  if (!inputEl) return;
+  const query = inputEl.value.toUpperCase();
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < button.length; i++) {
-    if (
-      button[i].innerHTML.toUpperCase().includes(input) ||
-      title[i].innerHTML.toUpperCase().includes(input)
-    ) {
-      skillcard[i].style.display = "";
-      card[i].style.display = "";
-    } else {
-      skillcard[i].style.display = "none";
-      card[i].style.display = "none";
-    }
-  }
+  document.querySelectorAll(".skill-card").forEach((cardEl) => {
+    const titleEl = cardEl.querySelector(".title");
+    const matches = titleEl
+      ? titleEl.textContent.toUpperCase().includes(query)
+      : false;
+    cardEl.style.display = matches ? "" : "none";
+  });
 }

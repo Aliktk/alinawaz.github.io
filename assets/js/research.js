@@ -114,7 +114,7 @@ const showResearchCards = () => {
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
           <div style="flex: 1; min-width: 250px;">
             <!-- Title -->
-            <a href="${paper.link}" target="_blank" style="text-decoration: none;">
+            <a href="${paper.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
               <h4 style="color: white; font-weight: 700; margin-bottom: 15px; line-height: 1.5; font-size: 1.3rem; transition: color 0.3s;" onmouseover="this.style.color='#bb86fc'" onmouseout="this.style.color='white'">
                 <i class="fas fa-file-alt" style="color: #bb86fc; margin-right: 10px;"></i>${paper.title}
               </h4>
@@ -173,7 +173,7 @@ const showResearchCards = () => {
           " onmouseover="this.style.background='#bb86fc'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='rgba(187, 134, 252, 0.1)'; this.style.color='#bb86fc'; this.style.transform='scale(1)'">
             <i class="fas fa-book-open"></i> <span id="btn-text-${paper.id}">Show Abstract</span>
           </button>
-          <a href="${paper.link}" target="_blank" style="
+          <a href="${paper.link}" target="_blank" rel="noopener noreferrer" style="
             background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
             color: white;
             border: none;
@@ -190,7 +190,7 @@ const showResearchCards = () => {
           " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(76, 175, 80, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
             <i class="fas fa-external-link-alt"></i> View Paper
           </a>
-          <a href="https://doi.org/${paper.doi}" target="_blank" style="
+          <a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" style="
             background: rgba(255, 255, 255, 0.05);
             color: #6C63FF;
             border: 2px solid #6C63FF;

@@ -127,8 +127,9 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 function showExperience() {
+  if (!img) return;
   setInterval(function () {
-    if (currentItem === experience.length) {
+    if (currentItem >= experience.length) {
       currentItem = 0;
     }
     const item = experience[currentItem];
@@ -148,7 +149,7 @@ const showCards = () => {
                   <div class="content-overlay"></div>
                     <img loading="lazy" src=${cardImage} class="card-img-top content-image" style="width: 100%; height: 150px; object-fit: contain; padding: 10px; background: white;">     
                   <div class="content-details fadeIn-bottom">
-                    ${moocLink !== '#' ? `<a href="${moocLink}" target="_blank"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>` : ''}                                   
+                    ${moocLink !== '#' ? `<a href="${moocLink}" target="_blank" rel="noopener noreferrer"><i class="fa fa-info-circle fa-2x" aria-hidden="true" style="color: white;"></i></a>` : ''}
                   </div>
                 </div>
                 <div class="card-body">
