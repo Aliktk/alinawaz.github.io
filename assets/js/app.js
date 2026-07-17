@@ -261,6 +261,58 @@ let upArrow = $(`
   <button id="btnScrollToTop" onclick="scrollToTop()" aria-label="Scroll to top"><i class="fas fa-2x fa-angle-up"></i></button>
 `);
 
+// Floating WhatsApp chat button (shown on every page, bottom-left so it never
+// overlaps the scroll-to-top button on the bottom-right).
+let whatsappBtn = $(`
+  <a href="https://wa.me/923149967653?text=Hi%20Ali%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+     id="whatsappChatBtn" target="_blank" rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp" title="Chat with me on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+`);
+
+// Styles for the WhatsApp button (injected once so it works on every page
+// regardless of which stylesheet a page loads).
+let whatsappStyles = $(`
+  <style id="whatsappChatBtnStyles">
+    #whatsappChatBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      z-index: 9999;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: whatsappPulse 2.5s infinite;
+    }
+    #whatsappChatBtn:hover {
+      transform: scale(1.1);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    }
+    @keyframes whatsappPulse {
+      0%   { box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70%  { box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #whatsappChatBtn { animation: none; }
+    }
+    @media (max-width: 480px) {
+      #whatsappChatBtn { width: 50px; height: 50px; font-size: 26px; bottom: 15px; left: 15px; }
+    }
+  </style>
+`);
+
 $(document).ready(function () {
   // updating the color of the swiper bullets (initial update of color)
   updateColorOfSwiperBullets(localStorage.getItem("lightMode"));
@@ -301,6 +353,8 @@ $(function () {
   bodyElement.prepend(header);
   bodyElement.append(footer);
   bodyElement.append(upArrow);
+  $("head").append(whatsappStyles);
+  bodyElement.append(whatsappBtn);
   $("#btnScrollToTop").css("visibility", "hidden");
 
   //toggler hamburger functions
