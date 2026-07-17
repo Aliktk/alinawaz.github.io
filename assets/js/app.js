@@ -278,7 +278,7 @@ let whatsappStyles = $(`
     #whatsappChatBtn {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px;
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -294,6 +294,12 @@ let whatsappStyles = $(`
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       animation: whatsappPulse 2.5s infinite;
     }
+    /* Lift the scroll-to-top button so it stacks above the WhatsApp button (both bottom-right) */
+    #btnScrollToTop {
+      bottom: 88px !important;
+      right: 23px !important;
+      margin: 0 !important;
+    }
     #whatsappChatBtn:hover {
       transform: scale(1.1);
       color: #fff;
@@ -308,7 +314,8 @@ let whatsappStyles = $(`
       #whatsappChatBtn { animation: none; }
     }
     @media (max-width: 480px) {
-      #whatsappChatBtn { width: 50px; height: 50px; font-size: 26px; bottom: 15px; left: 15px; }
+      #whatsappChatBtn { width: 50px; height: 50px; font-size: 26px; bottom: 15px; right: 15px; }
+      #btnScrollToTop { bottom: 78px !important; right: 17px !important; }
     }
   </style>
 `);
