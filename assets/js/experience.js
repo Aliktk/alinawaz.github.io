@@ -5,10 +5,17 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
+    title: "Founder & CEO 🚀",
+    cardImage: "https://img.icons8.com/color/96/artificial-intelligence.png",
+    place: "PAK-AI (Founder) | Pakistan",
+    time: "(June 2026 - Present)",
+    desp: "<li>Founded <strong>PAK-AI</strong>, an AI company delivering both custom AI/ML solutions for clients and in-house AI products</li><li>Lead overall technical, product & business strategy — from R&D and architecture to delivery and team building</li><li>Specialize in Computer Vision, NLP, Generative AI, Agentic AI, LLMs & RAG pipelines for real-world enterprise use cases</li><li>Build production-grade AI systems end to end: data pipelines, model training/fine-tuning, deployment & MLOps</li><li>Drive client engagements, partnerships and the vision for scalable, impactful AI solutions</li>"
+  },
+  {
     title: "Senior AI/ML Engineer 🚀",
     cardImage: "assets/images/experience-page/invozone.png",
     place: "Invozone | Johar Town Lahore (Remote)",
-    time: "(April 2025 - Present)",
+    time: "(April 2025 - May 2026)",
     desp: "<li><strong>L34H Platform:</strong> Architected enterprise AI automation using Azure OpenAI + FastAPI + PostgreSQL with intelligent IT issue resolution & rollback capabilities</li><li><strong>Mynatek Flagship:</strong> Led hospital cleaning verification system combining ST-GCN pose estimation + YOLOv11 segmentation for real-time hygiene monitoring on edge devices</li><li><strong>AutoScanX ANPR:</strong> Built high-performance license plate recognition system for multi-lane traffic using PaddleOCR + OpenCV at 60+ FPS</li><li>Implemented LangGraph-based conversational AI interfaces with WebSocket real-time communication</li><li>Developed comprehensive training pipelines with data augmentation, annotation tools & visualization modules</li>"
   },
   {
