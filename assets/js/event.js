@@ -40,7 +40,7 @@ $(document).ready(function () {
       output += `
     <div class="swiper-slide">
     <div class="img-container">
-      <img src=${event[x].image} alt="" class="img-fluid" />
+      <img src="${event[x].image}" alt="${event[x].title}" class="img-fluid" onerror="this.style.display='none'" />
     </div>
     <div class="container arrow_contain">
       <div class="row justify-content-center">
@@ -62,9 +62,10 @@ $(document).ready(function () {
     </div>
   </div>`;
     }
-    eventswiper.innerHTML = output;
+    if (eventswiper) eventswiper.innerHTML = output;
   }
-  document.addEventListener("DOMContentLoaded", fillData());
+  // Already inside $(document).ready, so run it directly.
+  fillData();
   const parallaxSliderOptions = {
     speed: 1000,
     effect: "coverflow",

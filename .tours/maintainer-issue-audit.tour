@@ -1,0 +1,101 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Issue Audit — Bugs, Content & Config",
+  "description": "A maintainer's walkthrough of the concrete, verified issues found across this static portfolio: runtime crashes in the always-loaded core script, page-renderer bugs, leftover template content, corrupted HTML heads, split analytics, and dead repo config. Each step is anchored to the exact line and paired with a fix.",
+  "ref": "main",
+  "steps": [
+    {
+      "directory": "assets/js",
+      "title": "0 · Where the logic lives",
+      "description": "**Situation:** This is a static HTML site with no framework — all behavior is in these vanilla JS files. `app.js` is special: it is loaded on *every* page and injects the shared nav, footer, and contact form at runtime. Everything else is a per-page content renderer that reads a JS data array and writes it into the DOM.\n\n**Why start here:** Most of the real bugs are null-reference crashes in these scripts because they assume their target element always exists. We'll walk the highest-impact ones first (core script), then the per-page renderers, then content and HTML/config issues.\n\n**Follow the path:** core crashes → form → content renderers → placeholder data → HTML head corruption → analytics → repo config."
+    },
+    {
+      "file": "assets/js/app.js",
+      "selection": { "start": { "line": 391, "character": 1 }, "end": { "line": 397, "character": 2 } },
+      "title": "1 · [HIGH] Loader crash on any page without a preloader",
+      "description": "**Situation:** `loader` is queried at parse time; `vanish()` runs on `window load` and calls `loader.classList.add(...)`.\n\n**Mechanism:** On any page that has no `.loader-container`, `loader` is `null`, so `vanish()` throws `TypeError: Cannot read properties of null` — and because it throws inside the `load` handler, later load-time work is aborted.\n\n**Implication:** Since `app.js` loads everywhere, one page missing the preloader markup silently breaks the whole load sequence.\n\n**Fix:** Guard it — `function vanish(){ if (loader) loader.classList.add(\"disappear\"); }` and/or only register the listener when `loader` exists."
+    },
+    {
+      "file": "assets/js/app.js",
+      "selection": { "start": { "line": 427, "character": 1 }, "end": { "line": 431, "character": 4 } },
+      "title": "2 · [HIGH] Light-mode load handler assumes the nav exists",
+      "description": "**Situation:** For light-mode users, this `load` handler does `document.getElementById(\"navbar\").classList.remove(...)` and sets `dark_toggler.checked = false`.\n\n**Gotcha:** The `#navbar` is *injected* by the separate DOM-ready block — if it isn't present when this `load` handler fires, `nav` is `null` → `TypeError`, and the toggler reset silently fails.\n\n**Fix:** Null-check both elements before touching them: `const nav = document.getElementById(\"navbar\"); if (nav) nav.classList.remove(\"dark-theme\"); const t = document.getElementById(\"dark_toggler\"); if (t) t.checked = false;`"
+    },
+    {
+      "file": "assets/js/app.js",
+      "selection": { "start": { "line": 335, "character": 1 }, "end": { "line": 339, "character": 8 } },
+      "title": "3 · [MEDIUM] Hardcoded footer height (magic 838)",
+      "description": "**Situation:** The scroll-to-top button changes color when it \"hits\" the footer, detected via `$(document).height() - 838`.\n\n**Mechanism:** `838` is a hand-tuned constant for the old footer height; the inline comment even says it must be changed manually. The footer was recently redesigned, so this value is almost certainly stale — the color now flips at the wrong scroll point.\n\n**Fix:** Measure at runtime: `$(document).height() - $(\".footer\").outerHeight()`."
+    },
+    {
+      "file": "assets/js/app.js",
+      "selection": { "start": { "line": 526, "character": 1 }, "end": { "line": 539, "character": 6 } },
+      "title": "4 · [MEDIUM] Contact form reports \"SENT\" before it actually submits",
+      "description": "**Situation:** After validation, the button animates to \"Sending\" → \"SENT\", then a `setTimeout` fires `footerForm.submit()` — a native full-page POST to Formcarry.\n\n**Mechanism:** There is no `fetch`, so there is no success/error path. The \"SENT\" label is shown at 1.5s regardless of whether the POST at 2.2s succeeds or the network fails.\n\n**Implication:** False success feedback; a failed send looks identical to a good one. (No security issue — only the user's own name/email/message are posted, over HTTPS.)\n\n**Fix:** Submit via `fetch()` to the endpoint, then show real success/error (e.g. via `swal`) and only then flip to \"SENT\"."
+    },
+    {
+      "file": "assets/js/references.js",
+      "selection": { "start": { "line": 1, "character": 1 }, "end": { "line": 2, "character": 46 } },
+      "title": "5 · [HIGH] References renderer has no null guard",
+      "description": "**Situation:** `referenceTable = document.querySelector(\".pain\")`, and `fillData` unconditionally sets `referenceTable.innerHTML` on DOMContentLoaded (line 94).\n\n**Gotcha:** On any page that isn't the references page there is no `.pain`, so this throws `TypeError: Cannot set properties of null`.\n\n**Fix:** Add `if (!referenceTable) return;` at the top of `fillData`. (This missing-guard pattern repeats across the renderers — experience.js, techstack.js, research.js, event.js all assume their container exists.)"
+    },
+    {
+      "file": "assets/js/references.js",
+      "selection": { "start": { "line": 10, "character": 1 }, "end": { "line": 34, "character": 20 } },
+      "title": "6 · [HIGH] Testimonials are still the template's placeholder \"John\" text",
+      "description": "**Situation:** Every testimonial refers to **\"John\"** (not Ali), mentored during \"JWOC'2021 / GSSOC'2021\", with unrelated referee names.\n\n**Mechanism:** This is untouched boilerplate from the forked portfolio template — it shipped to production as-is.\n\n**Gotcha:** Line 26's `image1` is a signed LinkedIn CDN URL with `e=1651708800` (expiry ~May 2022) — the token is long dead, so the image 404s with no `alt`/`onerror` fallback.\n\n**Fix:** Replace with real references (or remove the section), and use stable local images with `alt` + `onerror`."
+    },
+    {
+      "file": "assets/js/event.js",
+      "line": 67,
+      "title": "7 · [HIGH] `fillData()` is called, not passed, as the handler",
+      "description": "**Situation:** `document.addEventListener(\"DOMContentLoaded\", fillData());` — the `()` calls `fillData` immediately and registers its return value (`undefined`) as the listener.\n\n**Mechanism:** It only appears to work because the line already sits inside `$(document).ready`; the `addEventListener` itself is dead/misleading. Copy this pattern elsewhere and it silently does nothing.\n\n**Fix:** Drop the parens — `document.addEventListener(\"DOMContentLoaded\", fillData);` — or just call `fillData();` directly since we're already in `ready()`. Also guard `eventswiper` for null."
+    },
+    {
+      "file": "assets/js/project.js",
+      "selection": { "start": { "line": 144, "character": 1 }, "end": { "line": 148, "character": 30 } },
+      "title": "8 · [MEDIUM] Empty project links render `href=\"\"` (reloads the page)",
+      "description": "**Situation:** The card template always emits `<a href=\"${Previewlink}\">` and `<a href=\"${Githublink}\">`, and the title is a dead `<a href=\"#\">`.\n\n**Mechanism:** Many projects have `Previewlink: \"\"` / `Githublink: \"\"`. An empty `href=\"\"` resolves to the current URL, so clicking the icon reloads the page.\n\n**Implication:** Broken, confusing UX on the projects grid.\n\n**Fix:** Render each icon only when its link is non-empty — `research.js` already does exactly this for its DOI button, and `education.js` guards `moocLink !== '#'`. Mirror that pattern."
+    },
+    {
+      "file": "assets/js/project.js",
+      "selection": { "start": { "line": 159, "character": 1 }, "end": { "line": 161, "character": 45 } },
+      "title": "9 · [LOW] `myFunction()` search filter is dead code",
+      "description": "**Situation:** `myFunction()` filters cards by reading `#myInput`.\n\n**Gotcha:** No `#myInput` element exists in *any* HTML file (verified by grep across all pages) — there is no search box wired to this. The function can never run.\n\n**Fix:** Either add the search input to `projects.html` and wire it up, or delete `myFunction`. (Also note the large commented-out \"SKELETON LOADING\" block earlier in this file — dead comment to clean.)"
+    },
+    {
+      "file": "research.html",
+      "line": 83,
+      "title": "10 · [HIGH] `research.html` hardcodes a second navbar → duplicate `id=\"navbar\"`",
+      "description": "**Situation:** This page hardcodes `<nav ... id=\"navbar\">` in its body (lines 83–107), but `app.js` *also* injects a `<nav id=\"navbar\">` into every page.\n\n**Mechanism:** The rendered page ends up with two navs and two elements sharing `id=\"navbar\"`. `document.getElementById(\"navbar\")` (used by the dark-theme/scroll logic in app.js) matches only the first, so theme + scroll behavior desync — and users see a doubled nav.\n\n**Implication:** Invalid HTML (IDs must be unique) plus a visible layout bug unique to this one page.\n\n**Fix:** Delete the hardcoded `<nav>` block (83–107) and rely on the injected nav like every other page."
+    },
+    {
+      "file": "travel_temp.html",
+      "selection": { "start": { "line": 5, "character": 1 }, "end": { "line": 6, "character": 1 } },
+      "title": "11 · [CRITICAL] Unclosed `<title>` corrupts the document head",
+      "description": "**Situation:** Line 5 is `<title>Ali Nawaz` with no closing `</title>` — the next `<meta>` tags get swallowed into the title, and several metas below (og:title, application-name, apple-mobile-web-app-title) also have unterminated `content=\"` attributes.\n\n**Mechanism:** The parser can't recover cleanly; the head is malformed.\n\n**Gotcha:** `travel_temp.html` and `sem_temp.html` are leftover *template* pages — unlinked from nav/footer but still publicly reachable and `index,follow`. This one is also broken.\n\n**Fix:** These are orphaned templates — delete `travel_temp.html` and `sem_temp.html` (recommended), or repair the head and add `noindex` if you actually want them."
+    },
+    {
+      "file": "index.html",
+      "line": 598,
+      "title": "12 · [HIGH] Two Google Analytics properties; the second is never configured",
+      "description": "**Situation:** Pages load `G-M11CMZ12Q` (and `gtag('config', ...)` it) in the head, but also load a *second* property `G-G6D61F5TL4` (here at line 598, and on projects/experience/education/research/reference/techstack/design/event).\n\n**Mechanism:** `G-G6D61F5TL4` is loaded but **never** `config`-ed anywhere on the site (verified) — it collects nothing and just wastes a request. Analytics are split and unreliable across pages.\n\n**Gotcha:** `G-M11CMZ12Q` is only 9 chars after `G-` (GA4 IDs are 10) — likely itself a typo of the real ID.\n\n**Fix:** Decide on ONE correct GA4 ID (confirm the exact value in the GA dashboard), use a single `gtag` block on every page, and remove all stray `G-G6D61F5TL4` tags."
+    },
+    {
+      "file": "index.html",
+      "line": 2,
+      "title": "13 · [LOW] Non-standard `light-mode` attribute on <html>",
+      "description": "**Situation:** `<html lang=\"en\" light-mode=\"dark\">` — `light-mode` is a custom attribute with no `data-` prefix (present on every page).\n\n**Mechanism:** It works only because the theme JS reads it, but it's invalid HTML.\n\n**Fix:** Rename to `data-light-mode` (or use a class) and update the reader in `app.js`. Minor, but it's a validation error on every page."
+    },
+    {
+      "file": ".github/workflows/mkdocs.yml",
+      "selection": { "start": { "line": 3, "character": 1 }, "end": { "line": 7, "character": 1 } },
+      "title": "14 · [HIGH] A MkDocs CI workflow that can never run",
+      "description": "**Situation:** This workflow builds MkDocs docs on push/PR to a `documentation` branch.\n\n**Mechanism:** There is no `documentation` branch (only `main`), no `mkdocs.yml` config, and no `docs/` source — this is a plain HTML site. It's dead config inherited from a template. `branches: documentation` is also malformed (should be a list). It (and `mind_your_language.yaml`) still pin the deprecated `actions/checkout@v2`.\n\n**Fix:** Delete `.github/workflows/mkdocs.yml`; bump remaining workflows to `actions/checkout@v4`. Companion cleanup: `yolo.js` is a one-line dead file referenced nowhere — delete it; the `.gitignore` is a generic Python template unrelated to this site."
+    },
+    {
+      "title": "15 · What you can do now",
+      "description": "You've walked every verified issue, grouped by fix effort:\n\n**Quick deletes (safe):** `yolo.js`, `.github/workflows/mkdocs.yml`, orphaned templates `travel_temp.html` + `sem_temp.html`.\n\n**Runtime crash guards (HIGH):** null-check the loader (step 1), the light-mode nav (step 2), and the references container (step 5).\n\n**Content correctness (HIGH):** replace the placeholder \"John\" testimonials + dead LinkedIn image (step 6); fix the `fillData()` handler (step 7); remove `research.html`'s duplicate navbar (step 10).\n\n**Polish (MEDIUM/LOW):** real form success/error handling (step 4), runtime footer height (step 3), conditional project links (step 8), delete dead `myFunction` (step 9), consolidate to one GA ID (step 12), `data-light-mode` (step 13).\n\n**Owner decision needed:** which GA4 ID is real, and whether `design.html`/`event.html`/`reference.html` should be linked into the nav or removed. Also worth adding: a `CNAME` file (locks `portfolio.alinawaz.codes`) and a `.nojekyll`."
+    }
+  ]
+}

@@ -16,7 +16,7 @@ jobs:
     # The tasks each job should run
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Profanity check step
         uses: tailaiw/mind-your-language-action@v1.0.3
         env:

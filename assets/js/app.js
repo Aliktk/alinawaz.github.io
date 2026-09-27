@@ -332,11 +332,13 @@ $(document).ready(function () {
     } else {
       $("#btnScrollToTop").css("visibility", "visible");
       //The button will change it's color when it hits the footer
+      // Measure the footer height at runtime instead of hardcoding it,
+      // so the button recolors at the right point even if the footer changes.
+      var footerHeight = $(".footer").outerHeight() || 838;
       if (
         $(window).scrollTop() + $(window).height() >
-        $(document).height() - 838
+        $(document).height() - footerHeight
       ) {
-        // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
         $("#btnScrollToTop").css("background-color", "#bb86fc");
       } else {
         $("#btnScrollToTop").css("background-color", "#6a00bb");
@@ -393,7 +395,7 @@ let loader = document.querySelector(".loader-container");
 window.addEventListener("load", vanish);
 
 function vanish() {
-  loader.classList.add("disappear");
+  if (loader) loader.classList.add("disappear");
 }
 $(function () {
   $("a.nav-link").each(function () {
@@ -426,8 +428,9 @@ if (localStorage.getItem("lightMode") == "light") {
   //to add dark theme to nav bar after its been loaded
   window.addEventListener("load", function () {
     var nav = document.getElementById("navbar");
-    nav.classList.remove("dark-theme");
-    document.getElementById("dark_toggler").checked = false;
+    if (nav) nav.classList.remove("dark-theme");
+    var darkToggler = document.getElementById("dark_toggler");
+    if (darkToggler) darkToggler.checked = false;
   });
 
   var sc = document.getElementsByClassName("socialicon");
@@ -522,20 +525,35 @@ $(function submitAnimation() {
       return;
     }
     else {
+      const footerForm = document.getElementById("lnch").closest("form");
+      if (!footerForm) {
+        notify("Error !", "Something went wrong. Please try again.");
+        return;
+      }
 
-      setTimeout(function () {
-        $("#lnch").addClass("launching").text("Sending");
-        $("#lnch_btn").addClass("launching");
-      }, 0);
-      setTimeout(function () {
-        $("#lnch").addClass("launched").text("SENT");
-        $("#lnch_btn").addClass("launched");
-      }, 1500);
-      // Wait for 2.2 seconds so that the send button animation can be fully played before submitting the form
-      setTimeout(() => {
-        const footerForm = document.getElementById("lnch").closest("form");
-        if (footerForm) footerForm.submit();
-      }, 2200);
+      // Show the "sending" animation, then submit via fetch so we can
+      // report the REAL result instead of always claiming success.
+      $("#lnch").addClass("launching").text("Sending");
+      $("#lnch_btn").addClass("launching");
+
+      fetch(footerForm.action, {
+        method: "POST",
+        body: new FormData(footerForm),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Request failed");
+          $("#lnch").removeClass("launching").addClass("launched").text("SENT");
+          $("#lnch_btn").removeClass("launching").addClass("launched");
+          footerForm.reset();
+          if (typeof swal === "function")
+            swal("Sent!", "Your message has been sent.", "success");
+        })
+        .catch(function () {
+          $("#lnch").removeClass("launching").text("Send");
+          $("#lnch_btn").removeClass("launching");
+          notify("Error !", "Message could not be sent. Please try again.");
+        });
     }
   });
 });

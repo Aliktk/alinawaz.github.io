@@ -37,6 +37,8 @@ const references = [
 
 AOS.init();
 const fillData = () => {
+  // This renderer only has a target on the references page; bail out elsewhere.
+  if (!referenceTable) return;
   let output = "";
 
   references.forEach(
@@ -55,11 +57,11 @@ const fillData = () => {
       absbox_for_linkedin2,
     }) =>
       (output += `<tr data-aos="zoom-in-left"> 
-                <td class="imgCol"><img src="${image1}" class="rImg"></td>
+                <td class="imgCol"><img src="${image1}" class="rImg" alt="${name1}" onerror="this.style.display='none'"></td>
                 <td class = "referenceTitleName">
                     <div>
                         <span class="imgResponsive">
-                            <img src="${image1}" class="imgRes">
+                            <img src="${image1}" class="imgRes" alt="${name1}" onerror="this.style.display='none'">
                         </span>
                     </div>
                     <img src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
@@ -75,7 +77,7 @@ const fillData = () => {
                         <td class = "referenceTitleName">
                             <div>
                                 <span class="imgResponsive">
-                                    <img src="${image2}" class="imgRes">
+                                    <img src="${image2}" class="imgRes" alt="${name2}" onerror="this.style.display='none'">
                                 </span>
                             </div>
                             <img src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
@@ -88,7 +90,7 @@ const fillData = () => {
                             
                            
                         </td>
-                        <td class="imgCol"><img src="${image2}" class="rImg1"></td>
+                        <td class="imgCol"><img src="${image2}" class="rImg1" alt="${name2}" onerror="this.style.display='none'"></td>
                     </tr>`)
   );
   referenceTable.innerHTML = output;

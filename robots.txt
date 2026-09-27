@@ -3,10 +3,6 @@ Allow: /
 
 Sitemap: https://portfolio.alinawaz.codes/sitemap.xml
 
-# Disallow admin or private areas
-Disallow: /admin/
-Disallow: /private/
-
 # Allow important pages
 Allow: /index.html
 Allow: /projects.html
