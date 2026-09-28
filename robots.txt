@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio.alinawaz.codes/sitemap.xml
+Sitemap: https://aliktk.github.io/alinawaz.github.io/sitemap.xml
 
 # Allow important pages
 Allow: /index.html
