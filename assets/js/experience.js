@@ -125,22 +125,25 @@ const awards = [
   },
 ];
 
-const showAwards = () => {
-  let output = "";
-  awards.forEach(
-    ({ title, image, description }) =>
-      (output += `        
+// Shared card template for the Awards and Leadership sections (identical markup).
+const renderInfoCards = (items) =>
+  items
+    .map(
+      ({ title, image, description }) => `
       <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
-      
+
       <img loading="lazy" src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
       <div class="content">
           <h2 class="volunteerTitle">${title}</h2><br>
           <p class="copy">${description}</p></div>
-      
+
       </div>
-      `)
-  );
-  awardssection.innerHTML = output;
+      `
+    )
+    .join("");
+
+const showAwards = () => {
+  if (awardssection) awardssection.innerHTML = renderInfoCards(awards);
 };
 document.addEventListener("DOMContentLoaded", showAwards);
 
@@ -176,21 +179,7 @@ const leadership = [
 ];
 
 const showLeadership = () => {
-  let output = "";
-  leadership.forEach(
-    ({ title, image, description }) =>
-      (output += `        
-      <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
-      
-      <img loading="lazy" src="${image}" class="card-img" style="border-radius:10px; width: 100%; height: 250px; object-fit: contain; padding: 10px; background: white;">
-      <div class="content">
-          <h2 class="volunteerTitle">${title}</h2><br>
-          <p class="copy">${description}</p></div>
-      
-      </div>
-      `)
-  );
-  leadershipsection.innerHTML = output;
+  if (leadershipsection) leadershipsection.innerHTML = renderInfoCards(leadership);
 };
 document.addEventListener("DOMContentLoaded", showLeadership);
 

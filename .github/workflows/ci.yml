@@ -1,0 +1,48 @@
+name: Site Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    name: Broken link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links in HTML
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Social sites block bots (403/999), so exclude them to avoid false failures.
+          args: >-
+            --no-progress
+            --exclude-mail
+            --exclude 'linkedin\.com'
+            --exclude 'twitter\.com'
+            --exclude 'x\.com'
+            --exclude 'researchgate\.net'
+            --exclude 'kaggle\.com'
+            --exclude 'facebook\.com'
+            --exclude 'instagram\.com'
+            --exclude 'orcid\.org'
+            "*.html"
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  html-validate:
+    name: HTML validation (report only)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate HTML
+        run: npx -y html-validate@9 "*.html"
