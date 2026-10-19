@@ -30,6 +30,8 @@ jobs:
             --exclude 'facebook\.com'
             --exclude 'instagram\.com'
             --exclude 'orcid\.org'
+            --exclude 'scholar\.google'
+            --exclude 'upwork\.com'
             "*.html"
           fail: true
         env:
