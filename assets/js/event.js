@@ -40,7 +40,7 @@ $(document).ready(function () {
       output += `
     <div class="swiper-slide">
     <div class="img-container">
-      <img src="${event[x].image}" alt="${event[x].title}" class="img-fluid" onerror="this.style.display='none'" />
+      <img loading="lazy" src="${event[x].image}" alt="${event[x].title}" class="img-fluid" onerror="this.style.display='none'" />
     </div>
     <div class="container arrow_contain">
       <div class="row justify-content-center">

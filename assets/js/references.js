@@ -57,14 +57,14 @@ const fillData = () => {
       absbox_for_linkedin2,
     }) =>
       (output += `<tr data-aos="zoom-in-left"> 
-                <td class="imgCol"><img src="${image1}" class="rImg" alt="${name1}" onerror="this.style.display='none'"></td>
+                <td class="imgCol"><img loading="lazy" src="${image1}" class="rImg" alt="${name1}" onerror="this.style.display='none'"></td>
                 <td class = "referenceTitleName">
                     <div>
                         <span class="imgResponsive">
-                            <img src="${image1}" class="imgRes" alt="${name1}" onerror="this.style.display='none'">
+                            <img loading="lazy" src="${image1}" class="imgRes" alt="${name1}" onerror="this.style.display='none'">
                         </span>
                     </div>
-                    <img src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
+                    <img loading="lazy" src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
                     <a href="#0" class="paperTitle"> ${name1} </a> 
                     <div> ${designation1} </div> <div class="rConferences">  
                         <div class="referenceY">${message1}</div>
@@ -77,10 +77,10 @@ const fillData = () => {
                         <td class = "referenceTitleName">
                             <div>
                                 <span class="imgResponsive">
-                                    <img src="${image2}" class="imgRes" alt="${name2}" onerror="this.style.display='none'">
+                                    <img loading="lazy" src="${image2}" class="imgRes" alt="${name2}" onerror="this.style.display='none'">
                                 </span>
                             </div>
-                            <img src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
+                            <img loading="lazy" src="https://img.icons8.com/fluency/48/000000/quote-left.png"/>
                             <a href="#0" class="paperTitle">${name2} </a> 
                             <div> ${designation2} </div> <div class="rConferences">
                                 <div class="referenceY">${message2}</div>
@@ -90,7 +90,7 @@ const fillData = () => {
                             
                            
                         </td>
-                        <td class="imgCol"><img src="${image2}" class="rImg1" alt="${name2}" onerror="this.style.display='none'"></td>
+                        <td class="imgCol"><img loading="lazy" src="${image2}" class="rImg1" alt="${name2}" onerror="this.style.display='none'"></td>
                     </tr>`)
   );
   referenceTable.innerHTML = output;

@@ -213,7 +213,7 @@ const showCards = () => {
       (output += `        
       <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
       
-      <img src="${cardImage}" height="250" width="65" class="card-img" style="border-radius:10px">
+      <img loading="lazy" src="${cardImage}" height="250" width="65" class="card-img" style="border-radius:10px">
       <div class="content">
           <h2 class="volunteerTitle">${title}</h2><br>
           <p class="copy">${description}</p></div>
@@ -237,7 +237,7 @@ const showCards3 = () => {
       (output += `  
       <div class="blog-slider__item swiper-slide">
         <div class="blog-slider__img">
-            <img src="${image}" alt="">
+            <img loading="lazy" src="${image}" alt="">
         </div>
         <div class="blog-slider__content">
           <div class="blog-slider__title">${title}</div>
