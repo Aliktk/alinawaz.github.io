@@ -251,7 +251,15 @@ let footer = $(`
     </a>
 
 
-    
+
+    </div>
+
+    <!-- Brand / copyright -->
+    <div class="footer-brand" style="text-align: center; margin-top: 45px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div style="display: inline-block; background: #ffffff; padding: 10px 22px; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
+        <img src="assets/images/pak-ai-logo.png" alt="PAK-AI logo" width="150" height="37" style="display: block; height: auto; max-width: 150px;" loading="lazy">
+      </div>
+      <p style="color: #8890a6; font-size: 0.85rem; margin: 0;">© ${new Date().getFullYear()} Ali Nawaz · A <strong style="color:#b0b0b0;">PAK-AI</strong> initiative. All rights reserved.</p>
     </div>
     </div>
 </footer>
