@@ -1,0 +1,14 @@
+{
+  "name": "Ali Nawaz — AI/ML Engineer Portfolio",
+  "short_name": "Ali Nawaz",
+  "description": "Portfolio of Ali Nawaz, Senior AI/ML Engineer and Founder & CEO of PAK-AI.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    { "src": "assets/images/favicon.png", "sizes": "any", "type": "image/png" },
+    { "src": "assets/images/my_photo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any" }
+  ]
+}

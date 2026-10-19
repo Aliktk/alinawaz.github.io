@@ -4,6 +4,8 @@
     <title>Ali Nawaz | Projects</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#121212">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -455,6 +457,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="project-search" style="max-width: 420px; margin: 0 auto 10px; padding: 0 20px;">
+        <input type="text" id="myInput" onkeyup="myFunction()" aria-label="Search projects by title"
+            placeholder="🔍  Search projects by title..."
+            style="width: 100%; padding: 12px 18px; border-radius: 25px; border: 1px solid rgba(187,134,252,0.4); background: rgba(255,255,255,0.05); color: inherit; font-size: 1rem; outline: none;" />
     </div>
 
     <div class="project-box" style="padding: 20px;" id="projectContent">

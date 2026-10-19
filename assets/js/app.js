@@ -558,3 +558,10 @@ $(function submitAnimation() {
     }
   });
 });
+
+// Register the service worker for PWA / offline support (progressive enhancement).
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
