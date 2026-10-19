@@ -21,7 +21,7 @@ jobs:
           # Social sites block bots (403/999), so exclude them to avoid false failures.
           args: >-
             --no-progress
-            --exclude-mail
+            --exclude 'mailto:'
             --exclude 'linkedin\.com'
             --exclude 'twitter\.com'
             --exclude 'x\.com'
