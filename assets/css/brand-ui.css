@@ -1,0 +1,201 @@
+/* ============================================================
+   PAK-AI brand UI layer
+   Cohesive brand accents + the "About PAK-AI" section.
+   Loaded after the existing stylesheets so it refines, not
+   replaces, the current look.
+   ============================================================ */
+
+:root {
+  --pak-green-deep: #0f4d2e;
+  --pak-green: #1b7a4b;
+  --pak-green-accent: #19c37d;
+  --pak-green-glow: rgba(25, 195, 125, 0.35);
+}
+
+/* ---- Fix: section heading that had no color set (was dark-on-dark) ---- */
+.achievement-badges > .container > h2 {
+  color: #ffffff;
+}
+
+/* ============================================================
+   About PAK-AI section
+   ============================================================ */
+.pakai-about {
+  position: relative;
+  padding: 90px 20px;
+  background:
+    radial-gradient(1200px 400px at 50% -10%, rgba(25, 195, 125, 0.12), transparent 70%),
+    linear-gradient(135deg, #0f1a16 0%, #121212 55%, #10171d 100%);
+  overflow: hidden;
+}
+
+.pakai-about::before {
+  /* subtle brand hairline at the top of the band */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--pak-green-accent), transparent);
+  opacity: 0.6;
+}
+
+.pakai-about__head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 55px;
+}
+
+.pakai-about__logo {
+  display: inline-block;
+  background: #ffffff;
+  padding: 16px 32px;
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  margin-bottom: 26px;
+}
+
+.pakai-about__logo img {
+  display: block;
+  height: auto;
+  max-width: 230px;
+  width: 100%;
+}
+
+.pakai-about__eyebrow {
+  display: inline-block;
+  color: var(--pak-green-accent);
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.pakai-about__title {
+  color: #ffffff;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+.pakai-about__title .accent {
+  background: linear-gradient(120deg, var(--pak-green-accent), #7be8b4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pakai-about__lead {
+  color: #b9c2bd;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.pakai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  max-width: 1040px;
+  margin: 0 auto 50px;
+}
+
+.pakai-card {
+  background: linear-gradient(160deg, rgba(27, 122, 75, 0.14) 0%, rgba(18, 18, 18, 0.6) 100%);
+  border: 1px solid rgba(25, 195, 125, 0.22);
+  border-radius: 16px;
+  padding: 30px 26px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.pakai-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--pak-green-accent);
+  box-shadow: 0 22px 44px var(--pak-green-glow);
+}
+
+.pakai-card__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--pak-green) 0%, var(--pak-green-accent) 100%);
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px var(--pak-green-glow);
+}
+
+.pakai-card h3 {
+  color: #ffffff;
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.pakai-card p {
+  color: #a9b3ad;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pakai-about__cta {
+  text-align: center;
+}
+
+.pakai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 38px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--pak-green) 0%, var(--pak-green-accent) 100%);
+  box-shadow: 0 12px 28px var(--pak-green-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pakai-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px var(--pak-green-glow);
+  color: #ffffff;
+}
+
+/* ============================================================
+   Tech-stack chips (Featured Projects)
+   ============================================================ */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 2px 0 18px;
+}
+
+.tech-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #3a3f58;
+  background: #eef0f8;
+  border: 1px solid #e0e3f0;
+  padding: 4px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 600px) {
+  .pakai-about { padding: 64px 16px; }
+  .pakai-about__title { font-size: 1.8rem; }
+  .pakai-about__logo img { max-width: 190px; }
+}
